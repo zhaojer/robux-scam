@@ -1,0 +1,94 @@
+/* body takes up the entire viewport */
+html, body {
+    height: 100%;
+}
+
+#lottery-page {
+    height: 100%;
+    background-image: url("../images/background-crop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    background-color: black;
+    height: 9%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    padding-left: 5vw;
+}
+
+#logo {
+    max-width: 13.5vw;
+    height: auto;
+}
+
+#prizes {
+    padding-top: 11vh;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bolder;
+    color: gold;
+}
+
+.main-panel {
+    /* border: 2px solid purple; */
+    margin-top: 2vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left-panel {
+    /* border: 2px solid black; */
+    width: 27.5%;
+    text-align: center;
+    color: purple;
+    font-size: large;
+    font-weight: bold;
+}
+
+#robux {
+    margin-bottom: 6vh;
+    font-size: 3em;
+    font-weight: normal;
+}
+
+#chances {
+    font-size: 3em;
+    font-weight: normal;
+}
+
+#center-panel {
+    /* border: 2px solid black; */
+    width: 45%;
+    text-align: center;
+}
+
+#right-panel {
+    /* border: 2px solid black; */
+    width: 27.5%;
+}
+
+#more-chances .title-modal {
+    margin-top: 3vh;
+}
+
+#more-chances .close-button {
+    float: right;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    font-weight: bolder;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    font-size:small;
+    text-align: center;
+    padding-bottom: 1vh;
+}
