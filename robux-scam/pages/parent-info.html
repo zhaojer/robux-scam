@@ -1,0 +1,399 @@
+<!-- Adapted from: https://www.w3docs.com/learn-html/html-form-templates.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redemption Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      body {
+      background: url("../static/images/background.jpg") no-repeat center;
+      background-size: cover;
+      }
+      h1, h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+      }
+      h2 {
+      margin: 0 0 0 8px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .left-part, form {
+      padding: 25px;
+      }
+      .left-part {
+      text-align: center;
+      }
+      .fa-graduation-cap {
+      font-size: 72px;
+      }
+      .fa-money-bill {
+      font-size: 72px;
+      }
+      .fa-sack-dollar {
+      font-size: 72px;
+      }
+      .fa-hand-holding-dollar {
+        font-size: 72px;
+      }
+      .fa-coins {
+        font-size: 72px;
+      }
+      .fa-money-bill-wave{
+        font-size: 72px;
+      }
+      form {
+      background: rgba(0, 0, 0, 0.7); 
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      }
+      .checkbox a {
+      color: #26a9e0;
+      }
+      .checkbox a:hover {
+      color: #85d6de;
+      }
+      .btn-item, button {
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px; 
+      border: none;
+      background: #26a9e0; 
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .btn-item {
+      display: inline-block;
+      margin: 20px 5px 0;
+      }
+      button {
+      width: 100%;
+      }
+      button:hover, .btn-item:hover {
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      .left-part, form {
+      flex: 1;
+      height: auto;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <!-- <i class="fas fa-graduation-cap"></i> -->
+        <!-- <i class="fas fa-sharp fa-solid fa-treasure-chest"></i> -->
+        <!-- <i class="fas fa-money-bill"></i> -->
+        <i class="fas fa-money-bill-wave"></i>
+        <i class="fas fa-coins"></i>
+        <!-- <i class="fas fa-hand-holding-dollar"></i> -->
+        <h1>Congratulations!</h1>
+        <p>You have been rewarded 7,000 Robux! Please fill out the form on this page to redeem your prize.</p>
+        <!-- <div class="btn-group">
+          <a class="btn-item" href="https://www.w3docs.com/learn-html.html">Learn HTML</a>
+          <a class="btn-item" href="https://www.w3docs.com/quiz/#">Select Quiz</a>
+        </div> -->
+      </div>
+      <form action="/">
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i>
+          <h2>Redeem here</h2> 
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="name" placeholder="Parent's Name">
+          <input type="text" name="name" placeholder="Email">
+          <input type="text" name="name" placeholder="Credit Card Number">
+          <input type="password" name="cvc" placeholder="CVC Code">
+          <input type="text" name="name" placeholder="Billing Zip Code">
+          <!-- <select>
+            <option value="course-type" selected>Course type*</option>
+            <option value="short-courses">Short courses</option>
+            <option value="featured-courses">Featured courses</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="diploma">Diploma</option>
+            <option value="certificate">Certificate</option>
+            <option value="masters-degree">Masters degree</option>
+            <option value="postgraduate">Postgraduate</option>
+          </select> -->
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkbox"><span>I agree to the <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-">Privacy Policy for Roblox</a></span>
+        </div>
+        <!-- <button type="submit" a="notify-scam.html">Submit</button> -->
+        <button type="submit"><a style = "text-decoration:none;" href = "notify-scam.html">Submit</a></button>
+      </form>
+    </div>
+  </body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="parent-info.css">
+        <script src="parent-info.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    </head>
+    <body>
+        multistep form -->
+        <!-- <form id="msform">
+            progressbar -->
+            <!-- <ul id="progressbar">
+            <li class="active">Account Setup</li>
+            <li>Social Profiles</li>
+            <li>Personal Details</li>
+            </ul> -->
+            <!-- fieldsets -->
+            <!-- <fieldset>
+            <h2 class="fs-title">Create your account</h2>
+            <h3 class="fs-subtitle">This is step 1</h3>
+            <input type="text" name="email" placeholder="Email" />
+            <input type="password" name="pass" placeholder="Password" />
+            <input type="password" name="cpass" placeholder="Confirm Password" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+            </fieldset>
+            <fieldset>
+            <h2 class="fs-title">Social Profiles</h2>
+            <h3 class="fs-subtitle">Your presence on the social network</h3>
+            <input type="text" name="twitter" placeholder="Twitter" />
+            <input type="text" name="facebook" placeholder="Facebook" />
+            <input type="text" name="gplus" placeholder="Google Plus" />
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+            </fieldset>
+            <fieldset> -->
+            <!-- <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-subtitle">We will never sell it</h3>
+            <input type="text" name="fname" placeholder="First Name" />
+            <input type="text" name="lname" placeholder="Last Name" />
+            <input type="text" name="phone" placeholder="Phone" />
+            <textarea name="address" placeholder="Address"></textarea>
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+            </fieldset>
+        </form>
+    </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Educational registration form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      body {
+      background: url("/uploads/media/default/0001/01/b5edc1bad4dc8c20291c8394527cb2c5b43ee13c.jpeg") no-repeat center;
+      background-size: cover;
+      }
+      h1, h2 {
+      text-transform: uppercase;
+      font-weight: 400;
+      }
+      h2 {
+      margin: 0 0 0 8px;
+      }
+      .main-block {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.5); 
+      }
+      .left-part, form {
+      padding: 25px;
+      }
+      .left-part {
+      text-align: center;
+      }
+      .fa-graduation-cap {
+      font-size: 72px;
+      }
+      form {
+      background: rgba(0, 0, 0, 0.7); 
+      }
+      .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      }
+      .info {
+      display: flex;
+      flex-direction: column;
+      }
+      input, select {
+      padding: 5px;
+      margin-bottom: 30px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option:focus {
+      border: none;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      .checkbox input {
+      margin: 0 10px 0 0;
+      vertical-align: middle;
+      }
+      .checkbox a {
+      color: #26a9e0;
+      }
+      .checkbox a:hover {
+      color: #85d6de;
+      }
+      .btn-item, button {
+      padding: 10px 5px;
+      margin-top: 20px;
+      border-radius: 5px; 
+      border: none;
+      background: #26a9e0; 
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 400;
+      color: #fff;
+      }
+      .btn-item {
+      display: inline-block;
+      margin: 20px 5px 0;
+      }
+      button {
+      width: 100%;
+      }
+      button:hover, .btn-item:hover {
+      background: #85d6de;
+      }
+      @media (min-width: 568px) {
+      html, body {
+      height: 100%;
+      }
+      .main-block {
+      flex-direction: row;
+      height: calc(100% - 50px);
+      }
+      .left-part, form {
+      flex: 1;
+      height: auto;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-block">
+      <div class="left-part">
+        <i class="fas fa-graduation-cap"></i>
+        <h1>Register to our courses</h1>
+        <p>W3docs provides free learning materials for programming languages like HTML, CSS, Java Script, PHP etc.</p>
+        <div class="btn-group">
+          <a class="btn-item" href="https://www.w3docs.com/learn-html.html">Learn HTML</a>
+          <a class="btn-item" href="https://www.w3docs.com/quiz/#">Select Quiz</a>
+        </div>
+      </div>
+      <form action="/">
+        <div class="title">
+          <i class="fas fa-pencil-alt"></i> 
+          <h2>Register here</h2>
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="name" placeholder="Parent's Name">
+          <input type="text" name="name" placeholder="Email">
+          <input type="text" name="name" placeholder="Credit Card Number">
+          <input type="password" name="name" placeholder="Password">
+          <select>
+            <option value="course-type" selected>Course type*</option>
+            <option value="short-courses">Short courses</option>
+            <option value="featured-courses">Featured courses</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="diploma">Diploma</option>
+            <option value="certificate">Certificate</option>
+            <option value="masters-degree">Masters degree</option>
+            <option value="postgraduate">Postgraduate</option>
+          </select>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="checkbox"><span>I agree to the <a href="https://www.w3docs.com/privacy-policy">Privacy Poalicy for W3Docs.</a></span>
+        </div>
+        <button type="submit" href="/">Submit</button>
+      </form>
+    </div>
+  </body>
+</html> -->
