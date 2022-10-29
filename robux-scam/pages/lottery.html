@@ -42,7 +42,22 @@
                     <div id="chart"></div>
             </div>
             <div id="right-panel">
-    
+              <div id="lucky-users">
+                <div id="lucky-title">Lucky Users</div>
+                <div id="lucky-body">
+                  <div class="one-user" v-for=" user in luckyUsers">
+                    <div v-show="(user.toShow && (user.robux === 3600))">
+                      WOW! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
+                    </div>
+                    <div v-show="(user.toShow && (user.robux === 7000))">
+                      WHAT?! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
+                    </div>
+                    <div v-show="(user.toShow && (user.robux === 10000))">
+                      INCONCEIVABLE! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
         <div id="more-chances" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

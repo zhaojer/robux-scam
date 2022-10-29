@@ -1,5 +1,6 @@
 /* body takes up the entire viewport */
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -71,6 +72,55 @@ html, body {
     width: 27.5%;
 }
 
+#lucky-users {
+    border: 2px black solid;
+    width: 75%;
+    height: 55vh;
+    background-color: goldenrod;
+    border-radius: 10px;
+    color: azure;
+}
+
+#lucky-title {
+    padding-top: 2%;
+    padding-bottom: 3%;
+    background-color: goldenrod;
+    text-align: center;
+    border-radius: 8px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#lucky-body {
+    height: 86%;
+    padding-left: 3%;
+    padding-right: 3%;
+    overflow-y: auto;
+}
+
+.one-user {
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    z-index: 10;
+    border-radius: 10px;
+    width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 #more-chances .title-modal {
     margin-top: 3vh;
 }
@@ -88,7 +138,7 @@ html, body {
     bottom: 0;
     width: 100%;
     color: black;
-    font-size:small;
+    font-size: small;
     text-align: center;
     padding-bottom: 1vh;
 }

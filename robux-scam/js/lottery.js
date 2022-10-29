@@ -6,7 +6,7 @@ createApp({
   data() {
     return {
       // onscreen varaibles
-      robux: 1000000,
+      robux: 240200,
       chances: 1,
       // data for spining the wheel
       currentIteration: 1,
@@ -28,6 +28,50 @@ createApp({
       vis: {},
       oldrotation: 0,
       oldpick: [],
+      // data for lucky users
+      currentUser: 0,
+      luckyUsers: [
+        { "name": "Super Mario", "robux": 7000, "toShow": false },
+        { "name": "Toxic Avenger", "robux": 3600, "toShow": false },
+        { "name": "No mercy", "robux": 3600, "toShow": false },
+        { "name": "Vengeance", "robux": 10000, "toShow": false },
+        { "name": "Wolverine", "robux": 3600, "toShow": false },
+        { "name": "Maverick", "robux": 7000, "toShow": false },
+        { "name": "noobmaster69", "robux": 3600, "toShow": false },
+        { "name": "Omega Man", "robux": 3600, "toShow": false },
+        { "name": "Zombie Killer", "robux": 3600, "toShow": false },
+        { "name": "Butcher", "robux": 3600, "toShow": false },
+        { "name": "Billy", "robux": 10000, "toShow": false },
+        { "name": "Dreadnaught", "robux": 3600, "toShow": false },
+        { "name": "Frostmourne", "robux": 3600, "toShow": false },
+        { "name": "Ghostblade", "robux": 3600, "toShow": false },
+        { "name": "Godfather", "robux": 7000, "toShow": false },
+        { "name": "Batman", "robux": 7000, "toShow": false },
+        { "name": "Hello", "robux": 3600, "toShow": false },
+        { "name": "Wonderwoman", "robux": 3600, "toShow": false },
+        { "name": "Goliath", "robux": 3600, "toShow": false },
+        { "name": "beluga", "robux": 3600, "toShow": false },
+        { "name": "skittle", "robux": 7000, "toShow": false },
+        { "name": "pepper", "robux": 7000, "toShow": false },
+        { "name": "teacher", "robux": 3600, "toShow": false },
+        { "name": "Pablo", "robux": 10000, "toShow": false },
+        { "name": "Lester", "robux": 3600, "toShow": false },
+        { "name": "Egg", "robux": 3600, "toShow": false },
+        { "name": "Maimerino", "robux": 3600, "toShow": false },
+        { "name": "Eugene", "robux": 3600, "toShow": false },
+        { "name": "Master Chief", "robux": 10000, "toShow": false },
+        { "name": "Big Boss", "robux": 3600, "toShow": false },
+        { "name": "Thor", "robux": 3600, "toShow": false },
+        { "name": "Ninja", "robux": 7000, "toShow": false },
+        { "name": "lol", "robux": 3600, "toShow": false },
+        { "name": "Kratos", "robux": 10000, "toShow": false },
+        { "name": "Rampage", "robux": 3600, "toShow": false },
+        { "name": "Spiderman", "robux": 7000, "toShow": false },
+        { "name": "Bulletproof", "robux": 3600, "toShow": false },
+        { "name": "Superman", "robux": 3600, "toShow": false },
+        { "name": "Clockwerk", "robux": 3600, "toShow": false },
+        { "name": "hecker", "robux": 10000, "toShow": false },
+      ]
     }
   },
   methods: {
@@ -139,6 +183,15 @@ createApp({
     },
 
     spinWheel: function (d) {
+      // logic for checking chances remaining
+      if (this.chances === 0) {
+        // no more chances then show users this popup
+        let myModal = new bootstrap.Modal(document.getElementById("more-chances"));
+        myModal.show();
+        return;
+      }
+      this.chances -= 1;
+
       let rotation = 0, picked = 100000;
       this.spinButton.on("click", null);
       //all slices have been seen, all done
@@ -202,18 +255,50 @@ createApp({
           }
         });
     },
-    copy: function() {
-        // Get the text field
-        let copyText = document.getElementById("myInput");
-        // Select the text field
-        copyText.select();
-        // Copy the text inside the text field
-        navigator.clipboard.writeText(copyText.value);
-        // Alert the copied text
-        alert("Copied the text: " + copyText.value);
-    }
+
+    decRobuxOnPage: function () {
+      // stop executing this function if there are less than 10000
+      if (this.robux <= 10000) {
+        return;
+      }
+      this.robux -= this.luckyUsers[this.currentUser].robux;
+    },
+
+    // The maximum is inclusive and the minimum is inclusive
+    getRandomIntInclusive: function (min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    },
+
+    showLuckyUsers: function () {
+      if (this.currentUser >= this.luckyUsers.length) {
+        return;
+      }
+      this.luckyUsers[this.currentUser].toShow = true;
+      const el = document.getElementById('lucky-body');
+      if (el) {
+        el.scrollTop = el.scrollHeight;
+        console.log(el.scrollTop, el.scrollHeight);
+      }
+      this.decRobuxOnPage();
+      this.currentUser += 1;
+      setTimeout(this.showLuckyUsers, 30000);
+    },
+
+    copy: function () {
+      // Get the text field
+      let copyText = document.getElementById("myInput");
+      // Select the text field
+      copyText.select();
+      // Copy the text inside the text field
+      navigator.clipboard.writeText(copyText.value);
+      // Alert the copied text
+      alert("Copied the text: " + copyText.value);
+    },
   },
   mounted() {
     this.makeWheel();
+    setTimeout(this.showLuckyUsers, 10000);
   }
 }).mount('#lottery-page')
