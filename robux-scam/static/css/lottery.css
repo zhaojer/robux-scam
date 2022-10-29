@@ -132,6 +132,10 @@ body {
     font-weight: bolder;
 }
 
+.media-icon {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
 .footer {
     position: fixed;
     left: 0;
