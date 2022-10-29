@@ -48,17 +48,33 @@
                 <p style="font-size: x-large;color: white;text-align: left;">To express our appreciation, we are giving out 1,000,000 Robux to our players. All players will have a chance to win their share of the Robux by entering the lottery below. By participating in the lottery, you will get two guaranteed free virtual items!</p>
             </div>
             <div>
-                <img src="../static/images/image 3.svg" style="position: absolute; left: 25vw;top:176vh">
-                <img src="../static/images/image 4.svg" style="position: absolute; left: 50.5vw;top:176vh">
+                <div class="container" style="position: absolute; left: 25vw;top:176vh">
+                    <img src="../static/images/image 3.svg">
+                    <button class="btn" style="width: 20vw; height: 14vh;" onclick="myFunction()"></button>
+                    <script>
+                        function myFunction() {
+                            window.location.href= "lottery.html";
+                        }
+                    </script>
+                </div>
+                <div class="container" style="position: absolute; left: 50.5vw;top:176vh">
+                    <img src="../static/images/image 4.svg">
+                    <button class="btn" style="width: 20vw; height: 14vh;" onclick="myFunction()"></button>
+                </div>
             </div>
         </div>
         <!-- Bottom Section-->
         <div>
-            
             <img src ="../static/images/frame1.jpg" style="width:100%;height:auto">
             <p style="font-size: xxx-large;color: white;text-align: center; position: absolute; left: 35.5vw;top: 216vh"><b>Free Robux. Let's Get it!</b></p>
-            <div style="position: absolute; left: 39.5vw;top:238.9vh; width:20vw; border:3px solid rgb(87, 87, 87)">
+            <div class="container" style="position: absolute; left: 39.5vw;top:238.9vh; width:20vw; border:3px solid rgb(87, 87, 87)">
                 <p style="font-size: xxx-large;color: white;text-align: center;"><b>Test my luck!</b></p>
+                <button class="btn" style="width: 20vw; height: 10vh;" onclick="myFunction2()"></button>
+                <script>
+                    function myFunction2() {
+                        window.location.href= "lottery.html";
+                    }
+                </script>
             </div>
             <!-- Need to align to bottom of page-->
             <img src ="../static/images/Footer.svg" style="width:100%;height:auto">
