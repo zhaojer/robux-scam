@@ -14,12 +14,7 @@ p {
 	outline: none;
 	font-family: Roboto, Arial, sans-serif;
 	font-size: 16px;
-	color: #eee;
-}
-
-body {
-	background: #F5F5F5;
-	background-size: cover;
+	color: black;
 }
 
 h1,
@@ -32,6 +27,20 @@ h2 {
 	margin: 0 0 0 8px;
 }
 
+.header {
+    background-color: #DEE1E3;
+    height: 9vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    padding-left: 5vw;
+}
+
+#logo {
+    max-width: 13.5vw;
+    height: auto;
+}
+
 .main-block {
 	display: flex;
 	flex-direction: column;
@@ -39,7 +48,7 @@ h2 {
 	align-items: center;
 	height: 100%;
 	padding: 25px;
-	background: rgba(0, 0, 0, 0.5);
+	background: #F5F5F5;
 }
 
 .left-part,

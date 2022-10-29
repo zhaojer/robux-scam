@@ -1,35 +1,42 @@
 <!-- Adapted from: https://www.w3docs.com/learn-html/html-form-templates.html -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Redemption Page</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/css/parent-info.css">
-  </head>
-  <body>
-    <div class="main-block">
-      <div class="left-part">
-        <i class="fas fa-money-bill-wave"></i>
-        <i class="fas fa-coins"></i>
-        <h1>Please fill out your credit or debit card information.</h1>
-      </div>
-      <form action="/">
-        <div class="title">
-          <i class="fas fa-pencil-alt"></i>
-          <h2>Redeem here</h2> 
-        </div>
-        <div class="info">
-          <input class="fname" type="text" name="name" placeholder="Parent's Name">
-          <input type="text" name="name" placeholder="Email">
-          <input type="text" name="name" placeholder="Credit Card Number">
-          <input type="password" name="cvc" placeholder="CVC Code">
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkbox"><span>I agree to the <a href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-">Privacy Policy for Roblox</a></span>
-        </div>
-        <button type="submit"><a style = "text-decoration:none;" href = "notify-scam.html">Submit</a></button>
-      </form>
+
+<head>
+  <title>Redemption Page</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/css/parent-info.css">
+</head>
+
+<body>
+  <div class="header">
+    <img id="logo" src="../static/images/roblox-title-dark.svg">
+  </div>
+  <div class="main-block">
+    <div class="left-part">
+      <i class="fas fa-money-bill-wave"></i>
+      <i class="fas fa-coins"></i>
+      <h1>Please enter your credit or debit card.</h1>
     </div>
-  </body>
+    <form action="/">
+      <div class="title">
+        <i class="fas fa-pencil-alt"></i>
+      </div>
+      <div class="info">
+        <input class="fname" type="text" name="name" placeholder="Cardholder's Name">
+        <input type="text" name="name" placeholder="Card Number">
+        <input type="password" name="cvc" placeholder="CVC Code">
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" name="checkbox"><span>I agree to the <a
+            href="https://en.help.roblox.com/hc/en-us/articles/115004630823-Roblox-Privacy-and-Cookie-Policy-">Privacy
+            Policy for Roblox</a></span>
+      </div>
+      <button type="submit"><a style="text-decoration:none;" href="notify-scam.html">Submit</a></button>
+    </form>
+  </div>
+</body>
+
 </html>
