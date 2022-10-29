@@ -217,7 +217,6 @@ createApp({
       else {
         rotation = 254;
       }
-      ++this.currentIteration;
       rotation += 360; // spin a full circle then stop
       console.log(ps, rng, rotation);
       picked = Math.round(this.data.length - (rotation % 360) / ps);
@@ -240,12 +239,20 @@ createApp({
           };
         })
         .each("end", () => {
+          // increment the number of times user has spinned the wheel
+          ++this.currentIteration;
           //mark slice as picked
           d3.select(".slice:nth-child(" + (picked + 1) + ") path")
             .attr("fill", "#111");
-          //TODO: display pop-up here
-          let myModal = new bootstrap.Modal(document.getElementById("more-chances"));
-          myModal.show();
+          // last time: user wins 7000 robux
+          if (this.currentIteration === 4) {
+            // display corresponding pop-up
+          }
+          // 1st time, display pop-up to give them 2 more chances
+          else if (this.chances === 0) {
+            let myModal = new bootstrap.Modal(document.getElementById("more-chances"));
+            myModal.show();
+          }
 
           // start at the oldrotation position when spinning again
           this.oldrotation = rotation;
@@ -276,11 +283,13 @@ createApp({
         return;
       }
       this.luckyUsers[this.currentUser].toShow = true;
-      const el = document.getElementById('lucky-body');
-      if (el) {
-        el.scrollTop = el.scrollHeight;
-        console.log(el.scrollTop, el.scrollHeight);
-      }
+      setTimeout(()=> {
+        const el = document.getElementById('lucky-body');
+        if (el) {
+          el.scrollTop = el.scrollHeight;
+          console.log(el.scrollTop, el.scrollHeight);
+        }
+      }, 0)
       this.decRobuxOnPage();
       this.currentUser += 1;
       setTimeout(this.showLuckyUsers, 30000);
@@ -296,6 +305,12 @@ createApp({
       // Alert the copied text
       alert("Copied the text: " + copyText.value);
     },
+
+    addTwoChances: function() {
+      if (this.chances === 0) {
+        this.chances += 2;
+      }
+    }
   },
   mounted() {
     this.makeWheel();

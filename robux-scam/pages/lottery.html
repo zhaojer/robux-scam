@@ -56,6 +56,9 @@
                       INCONCEIVABLE! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
                     </div>
                   </div>
+                  <div id="you" v-show="currentIteration===4" class="one-user">
+                    📌WHAT?! <strong><u>YOU</u></strong> just won <strong><u>7000</u></strong> Robux! Congratulations!
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,14 +77,14 @@
                   <dl>
                     <dt>Step 1: Copy the following link.</dt>
                     <dd>
-                      <input type="text" value="Hello World" id="myInput">
+                      <input type="text" value="https://www.some-link-we-will-change.com/" id="myInput">
                       <button type="button" class="btn btn-secondary" @click="copy()">Copy</button>
                     </dd>
                     <dt>Step 2: Share the link with your friends!</dt>
-                    <a class="media-icon" href="https://www.facebook.com/"><img src="../static/images/facebook.svg" width="50" height="50"></a>
-                    <a class="media-icon" href="https://www.instagram.com/"><img src="../static/images/instagram.svg" width="50" height="50"></a>
-                    <a class="media-icon" href="https://twitter.com/"><img src="../static/images/twitter.svg" width="50" height="50"></a>
-                    <a class="media-icon" href="https://www.tiktok.com/"><img src="../static/images/tiktok.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://www.facebook.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/facebook.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://www.instagram.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/instagram.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://twitter.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/twitter.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://www.tiktok.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/tiktok.svg" width="50" height="50"></a>
                   </dl>
                 </div>
                 <div class="">

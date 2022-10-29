@@ -67,6 +67,10 @@ body {
     text-align: center;
 }
 
+#myInput {
+    width: 86%;
+}
+
 #right-panel {
     /* border: 2px solid black; */
     width: 27.5%;
@@ -101,6 +105,11 @@ body {
 .one-user {
     margin-top: 1%;
     margin-bottom: 4%;
+}
+
+#you {
+    border: solid 3px red;
+    border-radius: 5px;
 }
 
 /* width */
