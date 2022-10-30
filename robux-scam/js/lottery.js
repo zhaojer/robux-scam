@@ -246,7 +246,9 @@ createApp({
             .attr("fill", "#111");
           // last time: user wins 7000 robux
           if (this.currentIteration === 4) {
-            // display corresponding pop-up
+            // display win modal
+            let winModal = new bootstrap.Modal(document.getElementById("win-toast"));
+            winModal.show();
           }
           // 1st time, display pop-up to give them 2 more chances
           else if (this.chances === 0) {
@@ -310,7 +312,13 @@ createApp({
       if (this.chances === 0) {
         this.chances += 2;
       }
-    }
+    },
+    
+    claim: function() {
+      let loading = new bootstrap.Modal(document.getElementById("loading"));
+      loading.show();
+      setTimeout(() => location.href = "../pages/final-step.html", 7000);
+    },
   },
   mounted() {
     this.makeWheel();
