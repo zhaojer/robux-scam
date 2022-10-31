@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Roblox</title>
+    <meta charset="utf-8">
+    <!--For Mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--D3-->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+        defer></script>
+    <!--My Style-->
+    <link rel="stylesheet" type="text/css" href="../static/css/lottery.css">
+    <!--Vue-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--My Vue-->
+    <script src="../js/lottery.js" defer></script>
+</head>
+
+<body>
+    <!-- All HTML tags need to go in this div for Vue.js to work -->
+    <div id="lottery-page">
+        <div class="header">
+            <img id="logo" src="../static/images/logo-white.svg">
+        </div>
+        <div id="prizes">
+            Prizes
+        </div>
+        <div class="main-panel">
+            <div id="left-panel">
+                <div> Total Robux Remaining: </div>
+                <div id="robux"> {{robux}} </div>
+                <div> Your Chances Remaining: </div>
+                <div id="chances"> {{chances}} </div>
+            </div>
+            <div id="center-panel">
+                    <div id="chart"></div>
+            </div>
+            <div id="right-panel">
+              <div id="lucky-users">
+                <div id="lucky-title">Lucky Users</div>
+                <div id="lucky-body">
+                  <div class="one-user" v-for=" user in luckyUsers">
+                    <div v-show="(user.toShow && (user.robux === 3600))">
+                      WOW! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
+                    </div>
+                    <div v-show="(user.toShow && (user.robux === 7000))">
+                      WHAT?! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
+                    </div>
+                    <div v-show="(user.toShow && (user.robux === 10000))">
+                      INCONCEIVABLE! <strong><u>{{user.name}}</u></strong> just won <strong><u>{{user.robux}}</u></strong> Robux! Congratulations!
+                    </div>
+                  </div>
+                  <div id="you" v-show="currentIteration===4" class="one-user">
+                    📌WHAT?! <strong><u>YOU</u></strong> just won <strong><u>7000</u></strong> Robux! Congratulations!
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="more-chances" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+              <div class="modal-content">
+                <div class="title-modal">
+                  <h3 class="text-center">Uh-oh! So close!</h3>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    You just missed your chance in getting free Robux. But don't worry!
+                    You may get 2 more chances by completing the following steps!
+                  </p>
+                  <dl>
+                    <dt>Step 1: Copy the following link.</dt>
+                    <dd>
+                      <input type="text" value="https://www.some-link-we-will-change.com/" id="myInput">
+                      <button type="button" class="btn btn-secondary" @click="copy()">Copy</button>
+                    </dd>
+                    <dt>Step 2: Share the link with your friends!</dt>
+                    <a class="media-icon" href="https://www.facebook.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/facebook.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://www.instagram.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/instagram.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://twitter.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/twitter.svg" width="50" height="50"></a>
+                    <a class="media-icon" href="https://www.tiktok.com/" target="_blank" @click="addTwoChances()"><img src="../static/images/tiktok.svg" width="50" height="50"></a>
+                  </dl>
+                </div>
+                <div class="">
+                  <button type="button" class="btn btn-secondary close-button" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="win-toast" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+              <div class="modal-content">
+                <div class="title-modal">
+                  <h3 class="text-center">CONGRATULATIONS!</h3>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    YOU JUST WON <span style="font-weight: bold; text-decoration: underline;">7,000</span> Robux! WOOOOOOWWWWWWW!!!
+                  </p>
+                </div>
+                <div class="text-center">
+                  <button type="button" class="btn btn-outline-dark claim-button" @click="claim()">Claim My Rewards</button>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="loading" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered justify-loading">
+                <img src="../static/images/loading-gif.gif" width="150" height="150">
+                <div id="processing">Processing...</div>
+        </div>
+        <div class="footer">
+            © 2022 Roblox Corporation. All Rights Reserved.
+        </div>
+    </div>
+</body>
+
+</html>

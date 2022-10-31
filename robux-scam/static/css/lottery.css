@@ -1,0 +1,196 @@
+/* body takes up the entire viewport */
+html,
+body {
+    height: 100%;
+}
+
+#lottery-page {
+    height: 100%;
+    background-image: url("../images/background-crop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    background-color: black;
+    height: 9%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    padding-left: 5vw;
+}
+
+#logo {
+    max-width: 13.5vw;
+    height: auto;
+}
+
+#prizes {
+    padding-top: 11vh;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bolder;
+    color: gold;
+}
+
+.main-panel {
+    /* border: 2px solid purple; */
+    margin-top: 2vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+#left-panel {
+    /* border: 2px solid black; */
+    width: 27.5%;
+    text-align: center;
+    color: purple;
+    font-size: large;
+    font-weight: bold;
+}
+
+#robux {
+    margin-bottom: 6vh;
+    font-size: 3em;
+    font-weight: normal;
+}
+
+#chances {
+    font-size: 3em;
+    font-weight: normal;
+}
+
+#center-panel {
+    /* border: 2px solid black; */
+    width: 45%;
+    text-align: center;
+}
+
+#myInput {
+    width: 86%;
+}
+
+#right-panel {
+    /* border: 2px solid black; */
+    width: 27.5%;
+}
+
+#lucky-users {
+    border: 2px black solid;
+    width: 75%;
+    height: 55vh;
+    background-color: goldenrod;
+    border-radius: 10px;
+    color: azure;
+}
+
+#lucky-title {
+    padding-top: 2%;
+    padding-bottom: 3%;
+    background-color: goldenrod;
+    text-align: center;
+    border-radius: 8px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#lucky-body {
+    height: 86%;
+    padding-left: 3%;
+    padding-right: 3%;
+    overflow-y: auto;
+}
+
+.one-user {
+    margin-top: 1%;
+    margin-bottom: 4%;
+}
+
+#you {
+    border: solid 3px red;
+    border-radius: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    z-index: 10;
+    border-radius: 10px;
+    width: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#more-chances .title-modal {
+    margin-top: 3vh;
+}
+
+#more-chances .close-button {
+    float: right;
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    font-weight: bolder;
+}
+
+#more-chances .media-icon {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+#win-toast .title-modal {
+    margin-top: 3vh;
+}
+
+#win-toast h3 {
+    font-weight: bolder;
+}
+
+#win-toast .title-modal {
+    margin-top: 3vh;
+}
+
+#win-toast .claim-button {
+    margin-bottom: 3vh;
+    width: 80%;
+}
+
+#loading {
+    z-index: 1070;
+    position: fixed;
+}
+
+/* makes stacked modals behave correctly (don't ask me how) */
+.modal-backdrop:nth-of-type(2n + 1) {
+    z-index: 1061;
+}
+
+.justify-loading {
+    justify-content: center;
+    flex-direction: column;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+#processing {
+    font-size: xx-large;
+    margin-top: 1.25vh;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    font-size: small;
+    text-align: center;
+    padding-bottom: 1vh;
+}
