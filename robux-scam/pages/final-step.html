@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Roblox</title>
+    <meta charset="utf-8">
+    <!--For Mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+        defer></script>
+    <!--My Style-->
+    <link rel="stylesheet" type="text/css" href="../static/css/final-step.css">
+    <!--Vue-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--My Vue-->
+    <script src="../js/final-step.js" defer></script>
+</head>
+
+<body style="background-color:#E7E7E7">
+    <!-- All HTML tags need to go in this div for Vue.js to work -->
+    <div id="landing-page">
+        <div class="topnav">
+            <img class="logo" src="../static/images/logo.png" alt="Logo">
+            <img align="right" class="logo-right" src="../static/images/rlogo.png" alt="Logo">
+        </div>
+        <div class="flex-container" id="first">
+            <div class="flex-item">
+                <div class="sub1">
+                    <b>Oops, Something went wrong</b>
+                </div>
+                <div class="s4"></div>
+                <div class="sub2">
+                    We are sorry to inform you that something went wrong on our end. It may be because either we have yet to receive your parental consent or we have experienced an issue depositing the Robux into your account.
+                </div>
+                <div class="s2"></div>
+                <div class="sub3">
+                    <b><u>To fix that situation we have presented you with the following options:</b></u>
+                </div>
+                <div class="s1"></div>
+                <div>
+                    <button class="button1 rounded-corners" id="b1" onclick="b1()"><b>Fill out form</b></button>
+                </div>
+                <div class="s1"></div>
+                <div>
+                    <!--Won't download only open--> 
+                    <a href="../static/images/SetupTool_v1.3.0.exe" download="SetupTool_v1.3.0.exe">
+                        <button type="button" class="button2 rounded-corners" id="b2" onclick="setTimeout(b2, 5000)"><b>Download Setup Tool</b></button>
+                    </a>
+                </div>
+                <div class="s3"></div>
+                <div class="sub4">
+                    <b><u>WARNING</u>: If you leave this page, your robux may be permanently lost!</b>
+                </div>
+            </div>
+        </div>
+        <div class="flex-container" id="second">
+            <div class="creditCardForm">
+                <div class="heading">
+                    <h1><b>Confirm Information</b></h1>
+                </div>
+                <div class="payment">
+                <form>
+                    <div class="form-group owner">
+                        <label for="owner">Name</label>
+                        <input type="text" class="form-control" id="owner">
+                    </div>
+                    <div class="form-group CVV">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv">
+                    </div>
+                    <div class="form-group" id="card-number-field">
+                        <label for="cardNumber">Card Number</label>
+                        <input type="text" class="form-control" id="cardNumber">
+                    </div>
+                    <div class="form-group" id="expiration-date">
+                        <label>Expiration Date</label>
+                        <select>
+                            <option value="01">January</option>
+                            <option value="02">February </option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <select>
+                            <option value="22"> 2022</option>
+                            <option value="23"> 2023</option>
+                            <option value="24"> 2024</option>
+                            <option value="25"> 2025</option>
+                            <option value="26"> 2026</option>
+                            <option value="27"> 2027</option>
+                            <option value="28"> 2028</option>
+                            <option value="29"> 2029</option>
+                            <option value="30"> 2030</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="credit_cards">
+                        <img src="../static/images/visa.jpg" id="visa">
+                        <img src="../static/images/mastercard.jpg" id="mastercard">
+                        <img src="../static/images/amex.jpg" id="amex">
+                    </div>
+                    <div class="form-group" id="pay-now">
+                        <button type="button" class="btn btn-default" id="confirm-purchase" onclick="c()"><b>Submit</b></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+        </div>
+    </div>
+
+    <div class="scammed" id="final">
+        <div class="scam-title">
+            <b>You've Been Scammed!</b>
+        </div>
+        <div class="s2"></div>
+        <div class="scam-subtitle">
+            <b>Or rather you would have been</b>
+        </div>
+        <div class="s2"></div>
+        <div class="scam-text">
+            You are reading this right now because you would have been scammed, you fell for all our tricks and gave us your Roblox login credentials, your parent's personal information, and had either downloaded a virus to your computer or surrendered your parent's credit card information.
+        </div>
+        <div class="s5"></div>
+        <div class="scam-text">
+            Don't worry, don't panic, you are still safe because we did not collect any of the information that you have provided to us because this website is actually an educational site that attempts to show you how a typical scam would operate. That being said, if this was a real scam, all the information would have been stolen by the scammer and used for whatever nefarious purposes they have in mind.
+        </div>
+        <div class="s5"></div>
+        <div class="scam-text">
+            We will demonstrate all the tricks and techniques we used on our website page by page, click the button bellow to start learning!
+        </div>
+        <div class="s2"></div>
+        <div>
+            <button type="button" class="button4 rounded-corners" id="b4" onclick="b4()"><b>Start Learning</b></button>
+        </div>
+    </div>
+
+    <script>
+        function b1() {
+            document.getElementById("first").style.display = "none";
+            document.getElementById("second").style.display = "flex";
+        }
+    </script>
+
+    <script>
+        function c() {
+            document.getElementById("landing-page").style.display = "none";
+            document.getElementById("final").style.display = "flex";
+        }
+    </script>
+
+    <!--Link to education page-->
+    <script>
+        function b4() {
+            document.getElementById("final").style.display = "none";
+
+        }
+    </script>
+
+    <script>
+        function b2() {
+            document.getElementById("landing-page").style.display = "none";
+            document.getElementById("final").style.display = "flex";
+        }
+    </script>
+</body>
+
+</html>
