@@ -23,61 +23,93 @@
 <body>
     <!-- All HTML tags need to go in this div for Vue.js to work -->
     <div id="landing-page">
-        <!-- Top Section -->
-        <div style="width:100%;height:4vw;border:1px solid #000;background-color:rgb(0, 0, 0)">
-            <img src ="../static/images/RobloxTitle.svg" style="position: absolute; left: 4vw;top:2vh">
+        <div class="header">
+            <img id="logo" src="../static/images/logo-white.svg">
         </div>
-        <div style="width:100%;height:50vw;border:1px solid #000;background-color:rgb(41, 41, 41)">
-            <p style="font-size: xxx-large;color: white; position: absolute; left: 28.5vw;top: 16vh"><b>Get a Chance to Win Robux for Free!   </b></p>
-            <img src="../static/images/rbgift 1.svg" style="position: absolute; left: 38vw;top:30vh">
-            <div style="position: absolute; left: 41vw;top:65vh; width:20vw">
-                <p style="font-size: x-large;color: white;text-align: center;">Robux allows you to purchase upgrades for your avatar or buy special abilities in experiences.</p>
-            </div>
-            <div>
-                <img src="../static/images/rb2.svg" style="position: absolute; left: 10vw;top:77.5vh">
-                <img src="../static/images/rb1.svg" style="position: absolute; left: 70vw;top:76.5vh">
-            </div>
-        </div>
-        <!--  Middle Section  -->
-        <div>
-            <img src ="../static/images/frame2.jpg" style="width:100%;height:auto">
-            <p style="font-size: xxx-large;color: white; position: absolute; left: 34vw;top: 125vh"><b>We are almost 17 years old!</b></p>
-            <!-- Need to make the text font slightly larger and then rescale things -->
-            <div style="position: absolute; left: 34vw;top:135vh; width:30vw">
-                <p style="font-size: x-large;color: white;text-align: left;">The 17th year anniversary of Roblox is coming up. We would like to thank all of our players around the globe for your contribution to the game! Without you, we could never achieve who we are today.</p>
-                <p style="font-size: x-large;color: white;text-align: left;">To express our appreciation, we are giving out 1,000,000 Robux to our players. All players will have a chance to win their share of the Robux by entering the lottery below. By participating in the lottery, you will get two guaranteed free virtual items!</p>
-            </div>
-            <div>
-                <div class="container" style="position: absolute; left: 25vw;top:176vh">
-                    <img src="../static/images/image 3.svg">
-                    <button class="btn" style="width: 20vw; height: 14vh;" onclick="myFunction()"></button>
-                    <script>
-                        function myFunction() {
-                            window.location.href= "lottery.html";
-                        }
-                    </script>
+        <div id="spacer"></div>
+        <div id="chance-to-win">
+            <div id="top-section-container" class="section-container">
+                <div class="section-title text-center">
+                    <h2>Get A Chance to Win Robux For Free!</h2>
                 </div>
-                <div class="container" style="position: absolute; left: 50.5vw;top:176vh">
-                    <img src="../static/images/image 4.svg">
-                    <button class="btn" style="width: 20vw; height: 14vh;" onclick="myFunction()"></button>
+                <div class="top-section-image">
+                    <img class="image" src="../static/images/get-robux.svg">
+                </div>
+                <div class="top-section-bottom">
+                    <div class="top-lower-box">
+                        <img src="../static/images/avatars-left.svg">
+                    </div>
+                    <div id="center-info" class="top-lower-box">
+                        <div class="top-lower-box text-center">
+                            Robux allows you to purchase upgrades for your avatar or buy special abilities in experiences.
+                        </div>
+                        <div class="top-lower-box next-section">
+                            <div>Why are we doing this?</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="top-lower-box">
+                        <img src="../static/images/avatars-right.svg">
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Bottom Section-->
-        <div>
-            <img src ="../static/images/frame1.jpg" style="width:100%;height:auto">
-            <p style="font-size: xxx-large;color: white;text-align: center; position: absolute; left: 35.5vw;top: 216vh"><b>Free Robux. Let's Get it!</b></p>
-            <div class="container" style="position: absolute; left: 39.5vw;top:238.9vh; width:20vw; border:3px solid rgb(87, 87, 87)">
-                <p style="font-size: xxx-large;color: white;text-align: center;"><b>Test my luck!</b></p>
-                <button class="btn" style="width: 20vw; height: 10vh;" onclick="myFunction2()"></button>
-                <script>
-                    function myFunction2() {
-                        window.location.href= "lottery.html";
-                    }
-                </script>
+
+        <div id="anniversary">
+            <div class="section-container">
+                <div class="section-title text-center">
+                    <h2>We are almost 17 years old!</h2>
+                </div>
+                <p>
+                    The 17th year anniversary of Roblox is coming up.
+                    We would like to thank all of our players around the globe for your contribution to the game!
+                    Without you, we could never achieve who we are today.
+                </p>
+                <p>
+                    To express our appreciation, we are giving out 1,000,000 Robux to our players.
+                    All players will have a chance to win their share of the Robux by entering the lottery below.
+                    By participating in the lottery, you will get two guaranteed free virtual items!
+                </p>
+                <div id="virtual-items">
+                    <img width=362 src="../static/images/virtual_item_1.png">
+                    <img width=362 src="../static/images/virtual_item_2.png">
+                </div>
+                <div class="top-lower-box next-section">
+                    <div>Test your luck!</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
             </div>
-            <!-- Need to align to bottom of page-->
-            <img src ="../static/images/Footer.svg" style="width:100%;height:auto">
+        </div>
+
+        <div id="lottery">
+            <div class="section-container">
+                <div id="bottom-title-override" class="section-title text-center">
+                    <h2>Free Robux. Let's get it!</h2>
+                </div>
+                <a href="lottery.html"><button type="button" class="btn btn-outline-light btn-lg btn-custom">Test my luck!</button></a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-item text-center">
+                    *Offer available only to players aged 18 or older and players
+                    under 18 but with parental consent, until December 31, 2022 or
+                    while supplies last.<br>
+
+                    Must have a Roblox account to access and use
+                    Robux and the free virtual items.
+                </div>
+                <div class="footer-item">
+                    © 2022 Roblox Corporation. All Rights Reserved.
+                </div>
+            </div>
         </div>
     </div>
 </body>
