@@ -1,0 +1,163 @@
+/* body takes up the entire viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-size: calc(15px + 0.390625vw);
+}
+
+#landing-page {
+  height: 100%;
+    color: white;
+}
+
+.header {
+  background-color: black;
+  height: 9%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  padding-left: 5vw;
+  z-index: 10;
+}
+
+#logo {
+  max-width: 13.5vw;
+  height: auto;
+}
+
+#spacer {
+  width: 100%;
+  height: 9%;
+}
+
+#chance-to-win {
+  height: 700px;
+  background-color: rgb(41, 41, 41);
+  background-size: cover;
+}
+
+#anniversary {
+  height: 700px;
+  background: url("../images/monsters.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#lottery {
+  height: 450px;
+  background: url("../images/background.jpg");
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.top-section-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.image {
+  max-width: 400px;
+}
+
+.top-section-bottom {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-lower-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.top-lower-box-img {
+  align-items: flex-end;
+}
+
+#center-info {
+  font-size: 1rem;
+  margin-top: 15px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.next-section {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  max-width: 47ch;
+}
+
+#virtual-items {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#virtual-items img {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#bottom-title-override {
+  flex: 0.5;
+}
+
+.btn-custom {
+  font-size: 1.5rem;
+  --bs-btn-border-width: 3px;
+  --bs-btn-border-color: grey;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.6rem;
+  background-color: #1A1B1F;
+}
+
+.footer-content {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
