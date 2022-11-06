@@ -24,19 +24,16 @@ h2 {
 }
 
 h2 {
-	margin: 0 0 0 0px;
-}
-
-h1{
-	margin-top: 0px;
+	margin: 0 0 0 8px;
 }
 
 .header {
 	overflow: hidden;
+    position: sticky;
     background-color: #DEE1E3;
     height: 9vh;
-    /* width: 100%; */
-    position: sticky;
+    width: 100%;
+    position: fixed;
     display: flex;
     padding-left: 5vw;
 }
@@ -47,14 +44,14 @@ h1{
 }
 
 .main-block {
-	display: flex;
+	/* margin-top: 50px; */
+	/* display: flex; */
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	padding: 25px;
 	background: #F5F5F5;
-	overflow-y: hidden;
 }
 
 .left-part,
@@ -93,14 +90,13 @@ form {
 
 form {
 	background: rgba(0, 0, 0, 0.7);
-	background: #DEE1E3;
 }
 
 .title {
 	display: flex;
 	align-items: center;
-	/* margin-bottom: 20px; */
-	color: rgb(59, 58, 58);
+	margin-bottom: 20px;
+	color: #26a9e0;
 }
 
 .info {
@@ -118,8 +114,7 @@ select {
 }
 
 input::placeholder {
-	/* color: #eee; */
-	color: grey;
+	color: #eee;
 }
 
 option:focus {
@@ -180,7 +175,6 @@ button:hover,
 	html,
 	body {
 		height: 100%;
-		overflow: hidden;
 	}
 
 	.main-block {
