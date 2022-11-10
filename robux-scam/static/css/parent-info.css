@@ -68,8 +68,8 @@ h1{
 form {
 	/* display: inline-block; */
 	width: 40%;
-	margin-left: 335px;
 	padding: 25px;
+	margin: auto;
 }
 
 .left-part {
