@@ -53,12 +53,22 @@ h1{
 	align-items: center;
 	height: 100%;
 	padding: 25px;
-	background: #F5F5F5;
+	/* background: #F5F5F5; */
+	/* background: #ede9e8; */
+	background: #EBECF0;
 	overflow-y: hidden;
+	/* width: 50%; */
+}
+
+.form-title{
+	text-align: center;
 }
 
 .left-part,
 form {
+	/* display: inline-block; */
+	width: 40%;
+	margin-left: 335px;
 	padding: 25px;
 }
 
@@ -93,7 +103,10 @@ form {
 
 form {
 	background: rgba(0, 0, 0, 0.7);
-	background: #DEE1E3;
+	/* background: #DEE1E3; */
+	/* background: #ede9e8; */
+	/* background: #F5F5F5; */
+	background: white;
 }
 
 .title {
@@ -112,9 +125,9 @@ input,
 select {
 	padding: 5px;
 	margin-bottom: 30px;
-	background: transparent;
+	/* background: transparent;
 	border: none;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #eee; */
 }
 
 input::placeholder {
@@ -148,17 +161,25 @@ option {
 	color: #85d6de;
 }
 
+a:visited{
+	text-decoration: none;
+	color: black;
+}
+
 .btn-item,
 button {
 	padding: 10px 5px;
 	margin-top: 20px;
 	border-radius: 5px;
 	border: none;
-	background: #26a9e0;
+	/* background: #26a9e0; */
+	border: 1px solid black;
 	text-decoration: none;
 	font-size: 15px;
 	font-weight: 400;
-	color: #fff;
+	/* color: #fff; */
+	color: black;
+	background-color: white;
 }
 
 .btn-item {
@@ -170,10 +191,10 @@ button {
 	width: 100%;
 }
 
-button:hover,
+/* button:hover,
 .btn-item:hover {
 	background: #85d6de;
-}
+} */
 
 @media (min-width: 568px) {
 
@@ -185,12 +206,12 @@ button:hover,
 
 	.main-block {
 		flex-direction: row;
-		height: calc(100% - 50px);
+		height: calc(100% - 100px);
 	}
 
-	.left-part,
+	/* .left-part,
 	form {
 		flex: 1;
 		height: auto;
-	}
+	} */
 }
