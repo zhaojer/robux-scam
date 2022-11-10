@@ -24,19 +24,16 @@ h2 {
 }
 
 h2 {
-	margin: 0 0 0 0px;
-}
-
-h1{
-	margin-top: 0px;
+	margin: 0 0 0 8px;
 }
 
 .header {
 	overflow: hidden;
+    position: sticky;
     background-color: #DEE1E3;
     height: 9vh;
-    /* width: 100%; */
-    position: sticky;
+    width: 100%;
+    position: fixed;
     display: flex;
     padding-left: 5vw;
 }
@@ -47,29 +44,19 @@ h1{
 }
 
 .main-block {
-	display: flex;
+	/* margin-top: 50px; */
+	/* display: flex; */
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	padding: 25px;
-	/* background: #F5F5F5; */
-	/* background: #ede9e8; */
-	background: #EBECF0;
-	overflow-y: hidden;
-	/* width: 50%; */
-}
-
-.form-title{
-	text-align: center;
+	background: #F5F5F5;
 }
 
 .left-part,
 form {
-	/* display: inline-block; */
-	width: 40%;
 	padding: 25px;
-	margin: auto;
 }
 
 .left-part {
@@ -103,17 +90,13 @@ form {
 
 form {
 	background: rgba(0, 0, 0, 0.7);
-	/* background: #DEE1E3; */
-	/* background: #ede9e8; */
-	/* background: #F5F5F5; */
-	background: white;
 }
 
 .title {
 	display: flex;
 	align-items: center;
-	/* margin-bottom: 20px; */
-	color: rgb(59, 58, 58);
+	margin-bottom: 20px;
+	color: #26a9e0;
 }
 
 .info {
@@ -125,14 +108,13 @@ input,
 select {
 	padding: 5px;
 	margin-bottom: 30px;
-	/* background: transparent;
+	background: transparent;
 	border: none;
-	border-bottom: 1px solid #eee; */
+	border-bottom: 1px solid #eee;
 }
 
 input::placeholder {
-	/* color: #eee; */
-	color: grey;
+	color: #eee;
 }
 
 option:focus {
@@ -161,25 +143,17 @@ option {
 	color: #85d6de;
 }
 
-a:visited{
-	text-decoration: none;
-	color: black;
-}
-
 .btn-item,
 button {
 	padding: 10px 5px;
 	margin-top: 20px;
 	border-radius: 5px;
 	border: none;
-	/* background: #26a9e0; */
-	border: 1px solid black;
+	background: #26a9e0;
 	text-decoration: none;
 	font-size: 15px;
 	font-weight: 400;
-	/* color: #fff; */
-	color: black;
-	background-color: white;
+	color: #fff;
 }
 
 .btn-item {
@@ -191,27 +165,26 @@ button {
 	width: 100%;
 }
 
-/* button:hover,
+button:hover,
 .btn-item:hover {
 	background: #85d6de;
-} */
+}
 
 @media (min-width: 568px) {
 
 	html,
 	body {
 		height: 100%;
-		overflow: hidden;
 	}
 
 	.main-block {
 		flex-direction: row;
-		height: calc(100% - 100px);
+		height: calc(100% - 50px);
 	}
 
-	/* .left-part,
+	.left-part,
 	form {
 		flex: 1;
 		height: auto;
-	} */
+	}
 }
