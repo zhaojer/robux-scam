@@ -1,7 +1,7 @@
 import flask
-from flask import Flask
 
 import os.path
+import uuid
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
@@ -16,6 +16,9 @@ from googleapiclient.errors import HttpError
 # If modifying these scopes, delete the file token.json.
 # SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 SCOPES = ['https://www.googleapis.com/auth/gmail.compose']
+
+
+DATABASE = {}  # lol
 
 
 def get_creds():
@@ -72,7 +75,7 @@ def gmail_send_message(service, receiver):
     return send_message
 
 
-def create_and_send(receiver):
+def send_email(receiver):
     try:
         # create gmail api client
         service = build('gmail', 'v1', credentials=CREDS)
@@ -83,24 +86,55 @@ def create_and_send(receiver):
         print(F'An error occurred: {error}')
 
 
-app = Flask(__name__)
+def set_email(cookie, email):
+    DATABASE[cookie] = email
+
+
+def get_email(cookie):
+    return DATABASE[cookie]
+
+
 CREDS = get_creds()
+app = flask.Flask(__name__)
 
 
-@app.route("/email/", methods=['GET', 'POST'])
-def email_api():
+@app.route("/api/v1/save/", methods=['POST'])
+def save_email_route():
+    receiver = flask.request.args.get("email", type=str)
+    
+    response = flask.jsonify({})
+    # suppress Same-Origin Policy browser warning (it will send regardless though)
+    response.headers.add('Access-Control-Allow-Origin', 'http://127.0.0.1:5500')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+
+    if not receiver:
+        print("Did not send: needs non empty receiver address")
+        return response, 400
+
+    cookie = str(uuid.uuid4())
+    response.set_cookie("client-id", cookie)
+    set_email(cookie, receiver)
+
+    return response
+
+@app.route("/api/v1/send/", methods=['POST'])
+def send_email_route():
     print("Sending...")
     receiver = flask.request.args.get("receiver", type=str)
     
     response = flask.jsonify({})
     # suppress Same-Origin Policy browser warning (it will send regardless though)
     response.headers.add('Access-Control-Allow-Origin', 'http://127.0.0.1:5500')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
     
-    if not receiver:
-        print("Did not send: needs non empty receiver")
-        return response
+    cookie = flask.request.cookies.get('client-id')
+    if cookie is None:
+        print("Cannot find saved email address")
+        return response, 400
     
-    create_and_send(receiver)
+    receiver = get_email(cookie)
+    
+    send_email(receiver)
     print("Sent")
     
     return response
