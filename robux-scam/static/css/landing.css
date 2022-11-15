@@ -73,6 +73,10 @@ html, body {
   font-size: 2rem;
 }
 
+h2 {
+  font-weight: 900;
+}
+
 .top-section-image {
   display: flex;
   justify-content: center;
@@ -116,8 +120,14 @@ html, body {
 }
 
 p {
-  max-width: 47ch;
+  max-width: 43ch;
 }
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 
 #virtual-items {
   display: flex;
@@ -136,6 +146,7 @@ p {
 
 .btn-custom {
   font-size: 1.5rem;
+  font-weight: bold;
   --bs-btn-border-width: 3px;
   --bs-btn-border-color: grey;
 }
