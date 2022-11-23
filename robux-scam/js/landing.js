@@ -7,5 +7,11 @@ createApp({
     return {
       message: 'Hello Vue!'
     }
+  },
+  methods: {
+    openAgeRestrictionModal: function () {
+      let ageRestriction = new bootstrap.Modal(document.getElementById("age-restriction"));
+      ageRestriction.show();
+    },
   }
 }).mount('#landing-page')

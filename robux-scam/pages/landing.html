@@ -92,7 +92,28 @@
                 <div id="bottom-title-override" class="section-title text-center">
                     <h2>Free Robux. Let's get it!</h2>
                 </div>
-                <a href="parent-info.html"><button type="button" class="btn btn-outline-light btn-lg btn-custom">Test my luck!</button></a>
+                <button type="button" class="btn btn-outline-light btn-lg btn-custom" @click="openAgeRestrictionModal()">Test my luck!</button>
+            </div>
+        </div>
+
+        <div id="age-restriction" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+              <div class="modal-content">
+                <div class="title-modal">
+                  <p class="text-center">Age Restriction</p>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    Our data shows that you are under 18 years old.
+                    According to the US Federal Law, a minor (under age 18) cannot participate in any sort of lottery or gambling.
+                    Thus, we must receive parental consent in order to allow you to participate in the lottery. 
+                  </p>
+                </div>
+                <div class="text-center" style="display: flex; justify-content: space-around;">
+                  <a href="parent-info.html"><button type="button" class="btn btn-outline-dark restrict-button" @click="claim()">I would like to proceed.</button></a>
+                  <button type="button" class="btn btn-outline-dark restrict-button" data-bs-dismiss="modal">I will renounce my chance.</button>
+                </div>
+              </div>
             </div>
         </div>
 

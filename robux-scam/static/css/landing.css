@@ -119,7 +119,7 @@ h2 {
   align-items: center;
 }
 
-p {
+#anniversary p {
   max-width: 43ch;
 }
 
@@ -149,6 +149,33 @@ p {
   font-weight: bold;
   --bs-btn-border-width: 3px;
   --bs-btn-border-color: grey;
+}
+
+#age-restriction {
+  color: black;
+}
+
+#age-restriction .title-modal {
+  margin-top: 3vh;
+  font-weight: bolder;
+}
+
+#age-restriction .title-modal {
+  margin-top: 3vh;
+}
+
+#age-restriction .title-modal p {
+  margin: 0;
+  padding: 0;
+}
+
+#age-restriction .modal-body {
+  font-size: 0.7rem;
+}
+
+#age-restriction .restrict-button {
+  margin-bottom: 3vh;
+  font-size: 0.7rem;
 }
 
 .footer {
