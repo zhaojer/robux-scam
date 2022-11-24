@@ -25,6 +25,7 @@
 <body>
     <!-- All HTML tags need to go in this div for Vue.js to work -->
     <div id="lottery-page">
+      <img id="background" src="../static/images/background-crop.jpg">
         <div class="header">
             <img id="logo" src="../static/images/logo-white.svg">
         </div>
@@ -34,12 +35,12 @@
         <div class="main-panel">
             <div id="left-panel">
                 <div> Total Robux Remaining: </div>
-                <div id="robux"> {{robux}} </div>
+                <div id="robux"> ⬡ {{robux}} </div>
                 <div> Your Chances Remaining: </div>
                 <div id="chances"> {{chances}} </div>
             </div>
             <div id="center-panel">
-                    <div id="chart"></div>
+                    <svg id="chart"></svg>
             </div>
             <div id="right-panel">
               <div id="lucky-users">
@@ -62,7 +63,10 @@
                 </div>
               </div>
             </div>
-        </div>
+          </div>
+          <div class="footer">
+              © 2022 Roblox Corporation. All Rights Reserved.
+          </div>
         <div id="more-chances" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
               <div class="modal-content">
@@ -114,9 +118,6 @@
             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered justify-loading">
                 <img src="../static/images/loading-gif.gif" width="150" height="150">
                 <div id="processing">Processing...</div>
-        </div>
-        <div class="footer">
-            © 2022 Roblox Corporation. All Rights Reserved.
         </div>
     </div>
 </body>

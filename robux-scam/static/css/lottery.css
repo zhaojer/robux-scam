@@ -6,14 +6,21 @@ body {
 
 #lottery-page {
     height: 100%;
-    background-image: url("../images/background-crop.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    object-fit: cover;
+    z-index: -1;
 }
 
 .header {
     background-color: black;
-    height: 9%;
+    height: 9vh;
+    max-height: 9vh;
     width: 100%;
     position: fixed;
     display: flex;
@@ -26,45 +33,67 @@ body {
 }
 
 #prizes {
-    padding-top: 11vh;
+    padding-top: 10vh;
+    height: 20vh;
+    max-height: 20vh;
     text-align: center;
-    font-size: 3em;
+    /* font-size: min(3vw, 69px); */
+    font-size: 3vw;
     font-weight: bolder;
     color: gold;
+    /* border: 2px solid purple; */
 }
 
 .main-panel {
     /* border: 2px solid purple; */
-    margin-top: 2vh;
     position: relative;
     display: flex;
     justify-content: space-between;
 }
 
 #left-panel {
+    padding-top: 1%;
     /* border: 2px solid black; */
     width: 27.5%;
+    max-width: 27.5vw;
+    height: 75vh;
+    max-height: 75vh;
     text-align: center;
-    color: purple;
-    font-size: large;
+    color: black;
+    stroke-width: 5px;
+    font-size: 1vw;
     font-weight: bold;
 }
 
 #robux {
-    margin-bottom: 6vh;
-    font-size: 3em;
+    color: greenyellow;
+    margin-bottom: 10%;
+    font-size: 4em;
     font-weight: normal;
 }
 
+
 #chances {
-    font-size: 3em;
+    color: red;
+    font-size: 4em;
     font-weight: normal;
 }
 
 #center-panel {
-    /* border: 2px solid black; */
+    /* border: 2px solid pink; */
     width: 45%;
+    max-width: 45vw;
+    height: 75vh;
+    max-height: 75vh;
     text-align: center;
+}
+
+#chart {
+    /* border: black 2px solid; */
+    max-width: 45vw;
+    width: 45vw;
+    height: 75vh;
+    max-height: 75vh;
 }
 
 #myInput {
@@ -74,29 +103,34 @@ body {
 #right-panel {
     /* border: 2px solid black; */
     width: 27.5%;
+    max-width: 27.5vw;
+    height: 75vh;
+    max-height: 75vh;
 }
 
 #lucky-users {
-    border: 2px black solid;
+    border: 3px rebeccapurple solid;
     width: 75%;
     height: 55vh;
     background-color: goldenrod;
     border-radius: 10px;
-    color: azure;
+    color: white;
 }
 
 #lucky-title {
     padding-top: 2%;
     padding-bottom: 3%;
-    background-color: goldenrod;
+    color: rosybrown;
+    background-color: gold;
     text-align: center;
     border-radius: 8px;
-    font-size: x-large;
-    font-weight: bold;
+    font-size: 3vh;
+    font-weight: bolder;
 }
 
 #lucky-body {
     height: 86%;
+    font-size: 2vh;
     padding-left: 3%;
     padding-right: 3%;
     overflow-y: auto;
@@ -185,12 +219,14 @@ body {
 }
 
 .footer {
-    position: fixed;
-    left: 0;
+    /* border: 2px black solid; */
+    position: absolute;
     bottom: 0;
     width: 100%;
     color: black;
-    font-size: small;
+    font-size: 2vh;
     text-align: center;
     padding-bottom: 1vh;
+    height: 5vh;
+    max-height: 5vh;
 }
