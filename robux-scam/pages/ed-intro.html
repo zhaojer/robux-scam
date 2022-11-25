@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Roblox</title>
+  <meta charset="utf-8">
+  <!--For Mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--D3-->
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+    defer></script>
+  <!--My Style-->
+  <link rel="stylesheet" type="text/css" href="../static/css/lottery.css">
+  <!--Vue-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!--My Vue-->
+  <!-- <script src="../js/" defer></script> -->
+  <style>
+    #ed-explanation {
+      width: 100%;
+      height: auto;
+      color: black;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 90%;
+      /* transition: filter 1s;
+      -webkit-transition: -webkit-filter 1s; */
+    }
+
+    /* img:hover {
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+    } */
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    #caption1 {
+      background-color: #F2F4F5;
+      opacity: 85%;
+      margin-bottom: 4%;
+    }
+
+    #caption2 {
+      background-color: #0096FF;
+      color: white;
+      opacity: 95%;
+      margin-bottom: 4%;
+    }
+
+    #caption3 {
+      background-color: #50C878;
+      color: white;
+      opacity: 95%;
+      margin-bottom: 4%;
+    }
+
+    #caption4 {
+      background-color: #32CD32;
+      color: white;
+      opacity: 90%;
+      padding-top: 1%;
+      padding-bottom: 0;
+      margin-bottom: 4%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- All HTML tags need to go in this div for Vue.js to work -->
+  <div id="education-intro-page">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tutorial-modal">
+      Launch static backdrop modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="tutorial-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Tutorial</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="ed-explanation" class="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="0" class="active" aria-current="true"
+                  aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="../static/images/slide1.gif" class="d-block w-100">
+                  <div id="caption1" class="carousel-caption d-none d-md-block">
+                    <h5>Let's Go One More Time</h5>
+                    <p>We will interactively guide you through our 'scamming' website one more time.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                  <img src="../static/images/slide2.gif" class="d-block w-100">
+                  <div id="caption2" class="carousel-caption d-none d-md-block">
+                    <h5>Carefully Look Over Each Page</h5>
+                    <p>Click on the elements of the page that looks suspicious!
+                      If correct, a message will be displayed that teaches you how is it a potential scam.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                  <img src="../static/images/slide3.gif" class="d-block w-100">
+                  <div id="caption3" class="carousel-caption d-none d-md-block">
+                    <h5>Making Progress</h5>
+                    <p>Click on the same element to close to message. <br>
+                      Your progress will be displayed on the bottom right.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                  <img src="../static/images/slide4.gif" class="d-block w-100">
+                  <div id="caption4" class="carousel-caption d-none d-md-block">
+                    <h5>Next Page</h5>
+                    <p>After interacting with all suspicious elements, move on to next page!</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#ed-explanation" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#ed-explanation" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
