@@ -230,3 +230,12 @@ body {
     height: 5vh;
     max-height: 5vh;
 }
+
+.popover {
+    max-width: 25vw;
+}
+
+.popover-header {
+    text-align: center;
+    font-size: 3vh;
+}
