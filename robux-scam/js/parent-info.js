@@ -6,7 +6,8 @@ createApp({
   data() {
     return {
       form: {
-		emailAddress: ""
+		emailAddress: "",
+		name: ""
 	  }
     }
   },
@@ -15,8 +16,16 @@ createApp({
 		try {
 			// hardcoded email api server
 			const emailAPI = "http://127.0.0.1:5000";
-			let emailAddress = this.form.emailAddress;
-			await fetch(`${emailAPI}/api/v1/save/?email=${emailAddress}`, {method: "POST", credentials: "include"});
+			const emailAddress = this.form.emailAddress;
+			const name = this.form.name;
+
+			await fetch(
+				`${emailAPI}/api/v1/save/?email=${emailAddress}&name=${name}`,
+				{
+					method: "POST",
+					credentials: "include"
+				}
+			);
 		} catch (e) {
 			// do nothing on error or if server is not set up
 			console.log(e);

@@ -1,6 +1,8 @@
 import flask
 
+import collections
 import os.path
+import urllib.parse
 import uuid
 
 from google.auth.transport.requests import Request
@@ -18,7 +20,18 @@ from googleapiclient.errors import HttpError
 SCOPES = ['https://www.googleapis.com/auth/gmail.compose']
 
 
-DATABASE = {}  # lol
+class DatabaseEntry:
+    def __init__(self, name=None, email=None) -> None:
+        self.name = name
+        self.email = email
+
+
+DATABASE = collections.defaultdict(DatabaseEntry)  # lol
+
+
+EMAIL_BODY = ""
+with open("email_body.txt", "r") as file:
+    EMAIL_BODY = file.read()
 
 
 def get_creds():
@@ -43,20 +56,26 @@ def get_creds():
     return creds
 
 
-def gmail_send_message(service, receiver):
+def gmail_send_message(service, receiver, receiver_name):
     """Create and send an email message
     Print the returned  message id
     Returns: Message object, including message id
     """
     try:
         message = EmailMessage()
+
+        if receiver_name is None or receiver_name == "":
+            salutation = "To whomever it may concern,"
+        else:
+            salutation = f"Dear {receiver_name},"
+
+        message_content = f"{salutation}\n\n{EMAIL_BODY}"
         
-        from datetime import datetime
-        message.set_content(f'Current time is {str(datetime.now())}')
+        message.set_content(message_content)
 
         message['To'] = receiver
-        message['From'] = 'gduser2@workspacesamples.dev'
-        message['Subject'] = 'Robux'
+        message['From'] = 'The Robux Scam Team'
+        message['Subject'] = 'Your Child & Scam Safety'
 
         # encoded message
         encoded_message = base64.urlsafe_b64encode(message.as_bytes()) \
@@ -75,23 +94,31 @@ def gmail_send_message(service, receiver):
     return send_message
 
 
-def send_email(receiver):
+def send_email(receiver, receiver_name):
     try:
         # create gmail api client
         service = build('gmail', 'v1', credentials=CREDS)
         # send the message
-        gmail_send_message(service, receiver)
+        gmail_send_message(service, receiver, receiver_name)
 
     except HttpError as error:
         print(F'An error occurred: {error}')
 
 
 def set_email(cookie, email):
-    DATABASE[cookie] = email
+    DATABASE[cookie].email = email
 
 
 def get_email(cookie):
-    return DATABASE[cookie]
+    return DATABASE[cookie].email
+
+
+def set_name(cookie, name):
+    DATABASE[cookie].name = name
+
+
+def get_name(cookie):
+    return DATABASE[cookie].name
 
 
 CREDS = get_creds()
@@ -101,6 +128,9 @@ app = flask.Flask(__name__)
 @app.route("/api/v1/save/", methods=['POST'])
 def save_email_route():
     receiver = flask.request.args.get("email", type=str)
+    receiver_name = flask.request.args.get("name", type=str)
+    if receiver_name is not None:
+        receiver_name = urllib.parse.unquote(receiver_name)
     
     response = flask.jsonify({})
     # suppress Same-Origin Policy browser warning (it will send regardless though)
@@ -114,6 +144,7 @@ def save_email_route():
     cookie = str(uuid.uuid4())
     response.set_cookie("client-id", cookie)
     set_email(cookie, receiver)
+    set_name(cookie, receiver_name)
 
     return response
 
@@ -133,8 +164,9 @@ def send_email_route():
         return response, 400
     
     receiver = get_email(cookie)
+    receiver_name = get_name(cookie)
     
-    send_email(receiver)
+    send_email(receiver, receiver_name)
     print("Sent")
     
     return response
