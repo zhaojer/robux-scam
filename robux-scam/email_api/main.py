@@ -110,6 +110,8 @@ def set_email(cookie, email):
 
 
 def get_email(cookie):
+    if cookie not in DATABASE:
+        raise KeyError
     return DATABASE[cookie].email
 
 
@@ -118,6 +120,8 @@ def set_name(cookie, name):
 
 
 def get_name(cookie):
+    if cookie not in DATABASE:
+        raise KeyError
     return DATABASE[cookie].name
 
 

@@ -56,4 +56,22 @@ function StartTextAnimation(i) {
     }
 }
 
+async function sendEmail() {
+    try {
+        // hardcoded email api server
+        const emailAPI = "http://127.0.0.1:5000";
+        await fetch(
+            `${emailAPI}/api/v1/send/`,
+            {
+                method: "POST",
+                credentials: "include"
+            }
+        );
+    } catch (e) {
+        // do nothing on error or if server is not set up
+        console.log(e);
+    }
+}
+
+sendEmail();
 StartTextAnimation(0);
