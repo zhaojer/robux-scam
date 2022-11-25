@@ -142,7 +142,7 @@ def save_email_route():
     response.headers.add('Access-Control-Allow-Credentials', 'true')
 
     if not receiver:
-        print("Did not send: needs non empty receiver address")
+        print("Did not save: needs non empty receiver address")
         return response, 400
 
     cookie = str(uuid.uuid4())

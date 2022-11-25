@@ -20,33 +20,33 @@
 
 <body>
   <div id="parent-info-page">
-  <div class="header">
-    <img id="logo" src="../static/images/roblox-title-dark.svg">
-  </div>
-  <div class="main-block">
-    <div class="parent-form">
-      <form v-on:submit.prevent="submitForm()">
-        <div class = "form-title">
-          <h3>Parental Consent Form</h3>
-        </div>
-        <div>
-          <p>This form is used for obtaining parental consent from players under 18 years of age. Please enter the information below such thta we can contact your parent or legal gauridan to obtain their consent.</p>
-        </div>
-        <br>
-        <div class="info">
-          <label for="fname">Parent or Guardian Name:</label>
-          <input class="fname" type="text" name="name" placeholder="FirstName LastName" v-model="form.name">
-          <label for="fname">Parent or Guardian Email Address:</label>
-          <input type="text" name="text" placeholder="Email Address" v-model="form.emailAddress">
-        </div>
-        <div class="checkbox">
-          <input type="checkbox" name="checkbox"><span>By checking this box, I hereby confirm that all of the above information is correct and I understand that any false reporting may result in legal actions against me.
-          </span>
-        </div>
-        <button type="submit">Submit Form</button>
-      </form>
+    <div class="header">
+      <img id="logo" src="../static/images/roblox-title-dark.svg">
     </div>
-  </div>
+    <div class="main-block">
+      <div class="parent-form">
+        <form v-on:submit.prevent="submitForm()">
+          <div class = "form-title">
+            <h3>Parental Consent Form</h3>
+          </div>
+          <div>
+            <p>This form is used for obtaining parental consent from players under 18 years of age. Please enter the information below such thta we can contact your parent or legal gauridan to obtain their consent.</p>
+          </div>
+          <br>
+          <div class="info">
+            <label for="fname">Parent or Guardian Name:</label>
+            <input class="fname" type="text" name="name" placeholder="FirstName LastName" v-model="form.name">
+            <label for="fname">Parent or Guardian Email Address:</label>
+            <input type="text" name="text" placeholder="Email Address" v-model="form.emailAddress">
+          </div>
+          <div class="checkbox">
+            <input type="checkbox" name="checkbox"><span>By checking this box, I hereby confirm that all of the above information is correct and I understand that any false reporting may result in legal actions against me.
+            </span>
+          </div>
+          <button type="submit">Submit Form</button>
+        </form>
+      </div>
+    </div>
   </div>
 </body>
 
