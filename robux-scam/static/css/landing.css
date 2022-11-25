@@ -73,6 +73,10 @@ html, body {
   font-size: 2rem;
 }
 
+h2 {
+  font-weight: 900;
+}
+
 .top-section-image {
   display: flex;
   justify-content: center;
@@ -115,9 +119,15 @@ html, body {
   align-items: center;
 }
 
-p {
-  max-width: 47ch;
+#anniversary p {
+  max-width: 43ch;
 }
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 
 #virtual-items {
   display: flex;
@@ -136,8 +146,36 @@ p {
 
 .btn-custom {
   font-size: 1.5rem;
+  font-weight: bold;
   --bs-btn-border-width: 3px;
   --bs-btn-border-color: grey;
+}
+
+#age-restriction {
+  color: black;
+}
+
+#age-restriction .title-modal {
+  margin-top: 3vh;
+  font-weight: bolder;
+}
+
+#age-restriction .title-modal {
+  margin-top: 3vh;
+}
+
+#age-restriction .title-modal p {
+  margin: 0;
+  padding: 0;
+}
+
+#age-restriction .modal-body {
+  font-size: 0.7rem;
+}
+
+#age-restriction .restrict-button {
+  margin-bottom: 3vh;
+  font-size: 0.7rem;
 }
 
 .footer {
