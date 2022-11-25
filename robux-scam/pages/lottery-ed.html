@@ -34,8 +34,8 @@
         </div>
         <div class="main-panel">
             <div id="left-panel">
-              <div role="button"
-              data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true"
+              <div @click="robuxClick()" role="button"
+              data-bs-toggle="popover" data-bs-placement="right" data-bs-html="true"
               data-bs-customClass="popover-box"
               title="<span>Correct!</span>"
               data-bs-content="
@@ -97,7 +97,7 @@
                     </dd>
                     <dt>Step 2: Share the link with your friends!</dt>
                     <dd>
-                      <div @click="addTwoChances()" role="button" data-bs-toggle="popover" data-bs-placement="left" data-bs-html="true"
+                      <div @click="shareClick()" role="button" data-bs-toggle="popover" data-bs-placement="left" data-bs-html="true"
                       title="<span>Correct!</span>"
                       data-bs-content="
                       <p>This part of the page establishes <em>familiarity</em> with your friend and family.
@@ -114,7 +114,7 @@
                   </dl>
                 </div>
                 <div class="">
-                  <button type="button" class="btn btn-secondary close-button" data-bs-dismiss="modal">Close</button>
+                  <button type="button" @click="shareCloseClick()" class="btn btn-secondary close-button" data-bs-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
@@ -138,10 +138,58 @@
                   <p>ALways remember: There ain't no such thing as a free lunch.
                     If statements about “winning” or getting something for “free”
                     feel too good to be true, they most likely are.</p>
-                  " @click="rewardClick">Claim My Rewards</button>
+                  " @click="rewardClick()">Claim My Rewards</button>
                 </div>
               </div>
             </div>
+        </div>
+
+        <div class="modal fade" id="proceed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title">Nice! You've discovered them all!</h3>
+              </div>
+              <div class="modal-body">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">3/3</div>
+                </div>
+                <img style="width: 100%;" src="../static/images/mission-passed.png">
+              </div>
+              <div class="modal-footer">
+                <!-- fixme -->
+                <a type="button" class="btn btn-outline-success btn-sm">Continue to next page</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div id="toast1" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto">1 Down, 2 More To Go!</strong>
+              <small>now</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 33.3%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="3">1/3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div id="toast2" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto">2 Down, 1 More To Go!</strong>
+              <small>now</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 66.6%;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">2/3</div>
+              </div>
+            </div>
+          </div>
         </div>
     </div>
 </body>

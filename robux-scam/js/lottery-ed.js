@@ -74,7 +74,14 @@ createApp({
       ],
       popoverList: [],
       winModal: {},
-      numClicked: 0,
+      isRobuxPopoverOpen: false,
+      isSharePopoverOpen: false,
+      isRewardPopoverOpen: false,
+      numRobuxClicked: 0,
+      numShareClicked: 0,
+      numRewardClicked: 0,
+
+      toastList: [],
     }
   },
   methods: {
@@ -189,6 +196,10 @@ createApp({
     },
 
     spinWheel: function (d) {
+      // do not allow click when popover is open
+      if (this.isRobuxPopoverOpen) {
+        return;
+      }
       // logic for checking chances remaining
       if (this.chances === 0) {
         // no more chances then show users this popup
@@ -321,14 +332,63 @@ createApp({
       }
     },
 
+    checkAllClicked: function() {
+      if (this.numRobuxClicked >= 2 && this.numShareClicked >= 2 && this.numRewardClicked >= 2) {
+        let nextPageModal = new bootstrap.Modal(document.getElementById("proceed"));
+        nextPageModal.show();
+        return;
+      }
+      if (!this.isRobuxPopoverOpen && !this.isSharePopoverOpen && !this.isRewardPopoverOpen) {
+        let count = 0;
+        if (this.numRobuxClicked >= 2) {
+          ++count;
+        }
+        if (this.numShareClicked >= 2) {
+          ++count;
+        }
+        if (this.numRewardClicked >= 2) {
+          ++count;
+        }
+        this.toastList[count - 1].show();
+      }
+    },
+
+    robuxClick: function() {
+      this.numRobuxClicked += 1;
+      this.isRobuxPopoverOpen = !this.isRobuxPopoverOpen;
+      if (!this.isRobuxPopoverOpen) {
+        setTimeout( ()=>this.checkAllClicked(), 1000);
+      }
+    },
+
+    shareClick: function() {
+      this.numShareClicked += 1;
+      this.isSharePopoverOpen = !this.isSharePopoverOpen;
+      this.addTwoChances();
+      if (!this.isSharePopoverOpen) {
+        setTimeout( ()=>this.checkAllClicked(), 1000);
+      }
+    },
+
+    shareCloseClick: function() {
+      if (this.isSharePopoverOpen) {
+        this.numShareClicked += 1;
+        this.isSharePopoverOpen = false;
+        setTimeout( ()=>this.checkAllClicked(), 1000);
+      }
+    },
+
     rewardClick: function () {
-      this.numClicked += 1;
-      if (this.numClicked === 1) {
+      this.numRewardClicked += 1;
+      this.isRewardPopoverOpen = !this.isRewardPopoverOpen;
+      if (this.numRewardClicked === 1) {
         return;
       }
       this.popoverList[2].hide();
-      setTimeout( ()=>this.winModal.hide(), 200);
+      setTimeout( ()=>this.winModal.hide(), 100);
+      setTimeout( ()=>this.checkAllClicked(), 1000);
     },
+
   },
   mounted() {
     this.makeWheel();
@@ -338,6 +398,12 @@ createApp({
     let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
     this.popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
       return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    // initialize all toasts
+    let toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    this.toastList = toastElList.map(function (toastEl) {
+      return new bootstrap.Toast(toastEl)
     })
   }
 }).mount('#lottery-page')
