@@ -1,45 +1,19 @@
 html,
 body {
-	min-height: 100%;
-}
-
-body,
-div,
-form,
-input,
-select,
-p {
-	padding: 0;
-	margin: 0;
-	outline: none;
-	font-family: Roboto, Arial, sans-serif;
-	font-size: 16px;
-	color: black;
+	height: 100%;
+	font-family: Roboto, sans-serif;
 }
 
 #parent-info-page {
-	width: 100%;
+	/* border: 5px black solid; */
 	height: 100%;
-}
-
-h1,
-h2 {
-	/* text-transform: uppercase; */
-	font-weight: 400;
-}
-
-h2 {
-	margin: 0 0 0 0px;
-}
-
-h1{
-	margin-top: 0px;
+	background: #EBECF0;
 }
 
 .header {
 	overflow: hidden;
     background-color: #DEE1E3;
-    height: 9vh;
+    height: 9%;
     /* width: 100%; */
     position: sticky;
     display: flex;
@@ -56,69 +30,26 @@ h1{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100%;
-	padding: 25px;
-	/* background: #F5F5F5; */
-	/* background: #ede9e8; */
-	background: #EBECF0;
-	overflow-y: hidden;
-	/* width: 50%; */
+	height: 91%;
 }
 
 .form-title{
 	text-align: center;
+	padding: 10px;
 }
 
-.left-part,
 form {
 	/* display: inline-block; */
 	width: 40%;
 	padding: 25px;
+	border-radius: 3px;
 	margin: auto;
+	background-color: white;
 }
 
-.left-part {
-	text-align: center;
-	/* color: black; */
-}
-
-.fa-graduation-cap {
-	font-size: 72px;
-}
-
-.fa-money-bill {
-	font-size: 72px;
-}
-
-.fa-sack-dollar {
-	font-size: 72px;
-}
-
-.fa-hand-holding-dollar {
-	font-size: 72px;
-}
-
-.fa-coins {
-	font-size: 72px;
-}
-
-.fa-money-bill-wave {
-	font-size: 72px;
-}
-
-form {
-	background: rgba(0, 0, 0, 0.7);
-	/* background: #DEE1E3; */
-	/* background: #ede9e8; */
-	/* background: #F5F5F5; */
-	background: white;
-}
-
-.title {
-	display: flex;
-	align-items: center;
-	/* margin-bottom: 20px; */
-	color: rgb(59, 58, 58);
+p {
+	margin: 0;
+	padding: 0;
 }
 
 .info {
@@ -126,97 +57,59 @@ form {
 	flex-direction: column;
 }
 
-input,
-select {
-	padding: 5px;
-	margin-bottom: 30px;
-	/* background: transparent;
-	border: none;
-	border-bottom: 1px solid #eee; */
+input {
+	margin-bottom: 20px;
 }
 
 input::placeholder {
-	/* color: #eee; */
 	color: grey;
 }
 
-option:focus {
-	border: none;
+#confirmation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px;
 }
 
-option {
-	background: black;
-	border: none;
+#check {
+	padding-right: 10px;
 }
 
-/* #zipcode{
-	margin-bottom: 5px;
-} */
-
-.checkbox input {
-	margin: 0 10px 0 0;
-	vertical-align: middle;
-}
-
-.checkbox a {
-	color: #26a9e0;
-}
-
-.checkbox a:hover {
-	color: #85d6de;
-}
-
-a:visited{
-	text-decoration: none;
-	color: black;
-}
-
-.btn-item,
-button {
-	padding: 10px 5px;
-	margin-top: 20px;
-	border-radius: 5px;
-	border: none;
-	/* background: #26a9e0; */
-	border: 1px solid black;
-	text-decoration: none;
-	font-size: 15px;
-	font-weight: 400;
-	/* color: #fff; */
-	color: black;
-	background-color: white;
-}
-
-.btn-item {
-	display: inline-block;
-	margin: 10px 5px 0;
-}
-
-button {
+.parent-form .btn {
 	width: 100%;
 }
 
-/* button:hover,
-.btn-item:hover {
-	background: #85d6de;
-} */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    font-size: small;
+    text-align: center;
+    padding-bottom: 1vh;
+}
 
-@media (min-width: 568px) {
+.justify-loading {
+    justify-content: center;
+    flex-direction: column;
+    font-size: xx-large;
+    font-weight: bolder;
+}
 
-	html,
-	body {
-		height: 100%;
-		overflow: hidden;
-	}
+.modal-header {
+	justify-content: center;
+}
 
-	.main-block {
-		flex-direction: row;
-		height: calc(100% - 100px);
-	}
+#success .btn {
+	width: 100%;
+}
 
-	/* .left-part,
-	form {
-		flex: 1;
-		height: auto;
-	} */
+.popover {
+    max-width: 25vw;
+}
+
+.popover-header {
+    text-align: center;
+    font-size: 3vh;
 }
