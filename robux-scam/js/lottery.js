@@ -78,17 +78,16 @@ createApp({
     makeWheel: function () {
       // src: https://codepen.io/sumeshkp18/pen/VGBPYg?editors=1010
       let padding = { top: 0, right: 20, bottom: 0, left: 20 },
-        w = 500 - padding.left - padding.right,
-        h = 500 - padding.top - padding.bottom,
+        w = 555 - padding.left - padding.right,
+        h = 555 - padding.top - padding.bottom,
         r = Math.min(w, h) / 2,
         color = d3.scale.category20();
       // svg tag, all drawings go inside
-      console.log(this.data);
       let svg = d3.select('#chart')
-        .append("svg")
         .data([this.data])
         .attr("width", w + padding.left + padding.right)
-        .attr("height", h + padding.top + padding.bottom);
+        .attr("height", h + padding.top + padding.bottom)
+        .attr('viewBox', [0, 0, w + padding.left + padding.right, h + padding.top + padding.bottom]);
       // define patterns to display Robux image, used later to fill
       let defs = svg.append('svg:defs');
       defs.append("svg:pattern")
@@ -102,6 +101,8 @@ createApp({
         .attr("height", 351);
       // the wheel
       let container = svg.append("g")
+        // .attr("stroke", "gold")
+        // .attr("stroke-width", 2)
         .attr("class", "chartholder")
         .attr("transform", "translate(" + (w / 2 + padding.left) + "," + (h / 2 + padding.top) + ")");
       this.vis = container
@@ -123,11 +124,8 @@ createApp({
           }
           return color(i);
         })
-        .attr("stroke", function (d, i) {
-          if (i === 0 || i === 4 || i === 8) {
-            return "gold";
-          }
-        })
+        .attr("stroke", "gold")
+        .attr("stroke-width", 5)
         .attr("d", function (d) { return arc(d); });
       // add the text
       arcs.append("text").attr("transform", function (d) {
@@ -145,17 +143,22 @@ createApp({
         })
         .attr("font-size", function (d, i) {
           if (i === 0 || i === 4 || i === 8) {
-            return "1.3em";
+            return "1.2em";
+          }
+        })
+        .attr("stroke", function (d, i) {
+          if (i === 0 || i === 4 || i === 8) {
+            return "goldenrod";
           }
         })
         .attr("fill", function (d, i) {  // text color
           if (i === 0) {
             return "#ff0066";
           }
-          if (i === 4) {
+          else if (i === 4) {
             return "yellow";
           }
-          if (i === 8) {
+          else if (i === 8) {
             return "#00ff00";
           }
         });
