@@ -37,13 +37,17 @@
           </div>
           <div>
             <p>This form is used for obtaining parental consent from players under 18 years of age. Please enter the
-              information below such thta we can contact your parent or legal gauridan to obtain their consent.</p>
+              information below such thta we can contact your parent or legal gaurdian to obtain their consent.</p>
           </div>
           <br>
           <div class="info" @click="clickForm()" role="button" data-bs-toggle="popover" data-bs-placement="right"
             data-bs-html="true" title="<span>Correct!</span>" data-bs-content="
-      <p>Always remember: Fair exchanges shouldn't involve giving away any personal information.</p>
-      ">
+            <p>Your <em>personal information</em> is anything that can identify you;
+              this include your name, photo, street address, and in this case,
+              the name and email address of your parent or gaurdian!</p>
+            <p>Whenever you see a form online that require your personal information,
+              always ask yourself: Why does this website want my information?!</p>
+          ">
             <label for="fname">Parent or Guardian Name:</label>
             <input class="fname" type="text" name="name" placeholder="Name">
             <label for="fname">Parent or Guardian Email Address:</label>
@@ -57,8 +61,12 @@
           </div>
           <button class="btn btn-outline-dark" role="button" data-bs-toggle="popover" data-bs-placement="left"
             data-bs-html="true" title="<span>Correct!</span>" data-bs-content="
-      <p>Be cautious before you submit!</p>
-      ">Submit Form</button>
+            <p>Always think cautiously and critically before you submit!</p>
+            <p>1. Check the address bar at the top and make sure it begins with <em>https</em>.</p>
+            <p>2. Check the address and make sure it is actually the website you know (e.g. no misspells)!</p>
+            <p>3. Talk to your parents & ask for their permission!</p>
+            <p>Always remember: Fair exchanges shouldn't involve giving away any personal information.</p>
+          ">Submit Form</button>
         </form>
       </div>
     </div>
@@ -79,7 +87,7 @@
           </div>
           <div class="modal-footer">
             <!-- fixme -->
-            <a type="button" class="btn btn-outline-success btn-sm">Continue to next page</a>
+            <a type="button" class="btn btn-outline-success btn-sm" href="./lottery-ed.html">Continue to next page</a>
           </div>
         </div>
       </div>
