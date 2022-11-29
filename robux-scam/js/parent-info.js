@@ -8,7 +8,10 @@ createApp({
       form: {
         emailAddress: "",
         name: ""
-      }
+      },
+      processModal: {},
+      successModal: {},
+      failureModal: {},
     }
   },
   methods: {
@@ -19,6 +22,10 @@ createApp({
             const emailAddress = this.form.emailAddress;
             const name = this.form.name;
 
+            // // show processing modal
+            this.processModal = new bootstrap.Modal(document.getElementById('loading'));
+            this.processModal.show();
+
             await fetch(
                 `${emailAPI}/api/v1/save/?email=${emailAddress}&name=${name}`,
                 {
@@ -28,9 +35,17 @@ createApp({
             );
         } catch (e) {
             // do nothing on error or if server is not set up
+            this.failureModal = new bootstrap.Modal(document.getElementById('failure'));
+            this.processModal.hide();
+            this.failureModal.show();
             console.log(e);
+            return;
         }
-        location.href = "../pages/lottery.html";
+        // // show processing modal
+        this.successModal = new bootstrap.Modal(document.getElementById('success'));
+        this.processModal.hide();
+        this.successModal.show();
+        // location.href = "../pages/lottery.html";
     }
   }
 }).mount('#parent-info-page')

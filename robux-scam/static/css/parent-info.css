@@ -5,7 +5,7 @@ body {
 }
 
 #parent-info-page {
-	border: 5px black solid;
+	/* border: 5px black solid; */
 	height: 100%;
 	background: #EBECF0;
 }
@@ -76,7 +76,7 @@ input::placeholder {
 	padding-right: 10px;
 }
 
-.btn {
+.parent-form .btn {
 	width: 100%;
 }
 
@@ -90,3 +90,17 @@ input::placeholder {
     padding-bottom: 1vh;
 }
 
+.justify-loading {
+    justify-content: center;
+    flex-direction: column;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.modal-header {
+	justify-content: center;
+}
+
+#success .btn {
+	width: 100%;
+}

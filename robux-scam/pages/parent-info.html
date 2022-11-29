@@ -59,7 +59,55 @@
     <div class="footer">
       © 2022 Roblox Corporation. All Rights Reserved.
     </div>
-  </div>
+    <!-- <div id="loading" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div id="modal-content" class="modal-dialog modal-dialog-centered modal-sm">
+        <div style="border: 10px solid black"><img src="../static/images/loading-gif.gif" width="150" height="150"></div>
+        <div id="processing">Processing...</div>
+      </div>
+    </div> -->
+    <div class="modal fade" id="loading" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm justify-loading">
+        <img src="../static/images/loading-gif.gif" width="150" height="150">
+        <div id="processing">Processing...</div>
+      </div>
+    </div>
+    <div class="modal fade" id="success" data-bs-backdrop="static" aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">We Have Received Your Form</h5>
+          </div>
+          <div class="modal-body">
+            We will contact your parent or guardian as soon as possible.
+            Meanwhile, you may participate in the lottery but to claim the prize,
+            we must receive a consent response from parent or guardian.
+          </div>
+          <div class="modal-footer">
+            <a role="button" class="btn btn-outline-success" href="lottery.html">I Understand. Proceed to Robux
+              Lottery!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="failure" data-bs-backdrop="static" aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title">Something Went Wrong</h5>
+          </div>
+          <div class="modal-body">
+            The form failed to go through. Please try submitting again.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
