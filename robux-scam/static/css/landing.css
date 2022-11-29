@@ -201,5 +201,13 @@ h2 {
 }
 
 .popover {
-  min-width: 25vw;
+  max-width: 30vw;
+}
+
+.popover-header {
+  text-align: center;
+}
+
+#official-image {
+  width: 100%;
 }
