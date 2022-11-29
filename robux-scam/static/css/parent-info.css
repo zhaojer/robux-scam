@@ -104,3 +104,12 @@ input::placeholder {
 #success .btn {
 	width: 100%;
 }
+
+.popover {
+    max-width: 25vw;
+}
+
+.popover-header {
+    text-align: center;
+    font-size: 3vh;
+}
