@@ -2,36 +2,188 @@
 <html lang="en-US">
 
 <head>
-    <title>Roblox</title>
-    <meta charset="utf-8">
-    <!--For Mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
-        defer></script>
-    <!--My Style-->
-    <link rel="stylesheet" type="text/css" href="../static/css/landing.css">
-    <!--Vue-->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!--My Vue-->
-    <script src="../js/landing.js" defer></script>
+  <title>Roblox</title>
+  <meta charset="utf-8">
+  <!--For Mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+    defer></script>
+  <!--My Style-->
+  <link rel="stylesheet" type="text/css" href="../static/css/landing.css">
+  <!--Vue-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!--My Vue-->
+  <script src="../js/landing-edu.js" defer></script>
 </head>
 
 <body>
-    <!-- All HTML tags need to go in this div for Vue.js to work -->
-    <div id="landing-page">
-        <!-- Testing Bootstrap -->
-        <div>
-            <button type="button" class="btn btn-primary">Testing Bootstrap</button>
-        </div>
-        <!-- Testing Vue -->
-        <div>
-            {{ message }}
-        </div>
+  <!-- All HTML tags need to go in this div for Vue.js to work -->
+  <div id="landing-page">
+    <div class="header">
+      <img id="logo" @click="logoClick()" src="../static/images/logo-white.svg" role="button" data-bs-toggle="popover" title="Correct!"
+        data-bs-placement="bottom" data-bs-html="true" data-bs-content="
+                <p>Notice how this page looks very similiar to the official roblox page?</p>
+                <p>Scammers will try to pose an <em>authority</em> by imitating what is familiar to you in order to trick you into believing you are visiting the official website.</p>
+                <img id='official-image' src='../static/images/landing-edu-official.png'>
+            ">
     </div>
+    <div id="spacer"></div>
+    <div id="chance-to-win">
+      <div id="top-section-container" class="section-container">
+        <div class="section-title text-center" role="button" @click="titleClick()" data-bs-toggle="popover" title="Correct!"
+          data-bs-placement="bottom"
+          data-bs-content="Notice how it promises Robux for free? This should sound alarms as something suspicious!
+                    If a statement about getting something for “free” feels too good to be true, they most likely are.">
+          <h2>Get A Chance to Win Robux For Free!</h2>
+        </div>
+        <div class="top-section-image">
+          <img class="image" src="../static/images/get-robux.svg">
+        </div>
+        <div class="top-section-bottom">
+          <div class="top-lower-box">
+            <img src="../static/images/avatars-left.svg">
+          </div>
+          <div id="center-info" class="top-lower-box">
+            <div class="top-lower-box text-center">
+              Robux allows you to purchase upgrades for your avatar or buy special abilities in
+              experiences.
+            </div>
+            <div class="top-lower-box next-section">
+              <div>Why are we doing this?</div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                <path fill-rule="evenodd"
+                  d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </div>
+          </div>
+          <div class="top-lower-box">
+            <img src="../static/images/avatars-right.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="anniversary">
+      <div class="section-container">
+        <div class="section-title text-center">
+          <h2>We are almost 17 years old!</h2>
+        </div>
+        <p class="text-justify">
+          The 17th year anniversary of Roblox is coming up.
+          We would like to thank all of our players around the globe for your contribution to the game!
+          Without you, we could never achieve who we are today.
+        </p>
+        <p class="text-justify">
+          To express our appreciation, we are giving out 1,000,000 Robux to our players.
+          All players will have a chance to win their share of the Robux by entering the lottery below.
+          By participating in the lottery, you will get two guaranteed free virtual items!
+        </p>
+        <div id="virtual-items">
+          <img width=362 src="../static/images/virtual_item_1.png">
+          <img width=362 src="../static/images/virtual_item_2.png">
+        </div>
+        <div class="top-lower-box next-section">
+          <div>Test your luck!</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+            class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            <path fill-rule="evenodd"
+              d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="lottery">
+      <div class="section-container">
+        <div id="bottom-title-override" class="section-title text-center">
+          <h2>Free Robux. Let's get it!</h2>
+        </div>
+        <button type="button" @click="buttonClick" class="btn btn-outline-light btn-lg btn-custom" data-bs-toggle="popover" title="Correct!"
+          data-bs-placement="bottom" data-bs-content="Remember: Nothing is ever given out so freely.
+                    You should learn to be cautious when they are handing out things for free that are valuable!">Test
+          my luck!</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-item text-center">
+          *Offer available only to players aged 18 or older and players
+          under 18 but with parental consent, until December 31, 2022 or
+          while supplies last.<br>
+
+          Must have a Roblox account to access and use
+          Robux and the free virtual items.
+        </div>
+        <div class="footer-item">
+          © 2022 Roblox Corporation. All Rights Reserved.
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="proceed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 style="color: black" class="modal-title">Nice! You've discovered them all!</h3>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+                style="width: 100%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">3/3</div>
+            </div>
+            <img style="width: 100%;" src="../static/images/mission-passed.png">
+          </div>
+          <div class="modal-footer">
+            <!-- fixme -->
+            <a type="button" class="btn btn-outline-success btn-sm" href="./parent-info-ed.html">Continue to next page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Declare toasts here-->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="toast1" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">1 Down, 2 More To Go!</strong>
+          <small>now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+              style="width: 33.3%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="3">1/3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="toast2" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">2 Down, 1 More To Go!</strong>
+          <small>now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+              style="width: 66.6%;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">2/3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </body>
 
 </html>

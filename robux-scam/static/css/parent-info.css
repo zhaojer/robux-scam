@@ -1,0 +1,115 @@
+html,
+body {
+	height: 100%;
+	font-family: Roboto, sans-serif;
+}
+
+#parent-info-page {
+	/* border: 5px black solid; */
+	height: 100%;
+	background: #EBECF0;
+}
+
+.header {
+	overflow: hidden;
+    background-color: #DEE1E3;
+    height: 9%;
+    /* width: 100%; */
+    position: sticky;
+    display: flex;
+    padding-left: 5vw;
+}
+
+#logo {
+    max-width: 13.5vw;
+    height: auto;
+}
+
+.main-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 91%;
+}
+
+.form-title{
+	text-align: center;
+	padding: 10px;
+}
+
+form {
+	/* display: inline-block; */
+	width: 40%;
+	padding: 25px;
+	border-radius: 3px;
+	margin: auto;
+	background-color: white;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	margin-bottom: 20px;
+}
+
+input::placeholder {
+	color: grey;
+}
+
+#confirmation {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+#check {
+	padding-right: 10px;
+}
+
+.parent-form .btn {
+	width: 100%;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    font-size: small;
+    text-align: center;
+    padding-bottom: 1vh;
+}
+
+.justify-loading {
+    justify-content: center;
+    flex-direction: column;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.modal-header {
+	justify-content: center;
+}
+
+#success .btn {
+	width: 100%;
+}
+
+.popover {
+    max-width: 25vw;
+}
+
+.popover-header {
+    text-align: center;
+    font-size: 3vh;
+}
