@@ -35,11 +35,11 @@ createApp({
             );
         } catch (e) {
             // do nothing on error or if server is not set up
-            this.failureModal = new bootstrap.Modal(document.getElementById('failure'));
-            this.processModal.hide();
-            this.failureModal.show();
+            // this.failureModal = new bootstrap.Modal(document.getElementById('failure'));
+            // this.processModal.hide();
+            // this.failureModal.show();
             console.log(e);
-            return;
+            // return;
         }
         // // show processing modal
         this.successModal = new bootstrap.Modal(document.getElementById('success'));
