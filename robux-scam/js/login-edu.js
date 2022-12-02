@@ -5,6 +5,8 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
+      message: 'hello vue',
+
       popoverList: [],
       toastList: [],
 
@@ -70,4 +72,4 @@ createApp({
     return new bootstrap.Toast(toastEl)
   })
 }
-}).mount('#login-edu')
+}).mount('#login-page')
