@@ -319,36 +319,6 @@ header a:hover{
     }
 }
 
-.scammed {
-  display: none;
-  height: 100%;
-  width: 100%;
-  padding: 50px;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: black;
-}
-
-.scam-title {
-  color: white;
-  font-family: 'Courier New', monospace;
-  font-size: 80px;
-}
-
-.scam-subtitle {
-  color: white;
-  font-family: 'Courier New', monospace;
-  font-size: 30px;
-}
-
-.scam-text {
-  color: white;
-  font-family: 'Courier New', monospace;
-  font-size: 18px;
-}
-
 .s5 {
   height: 10px;
 }
@@ -378,4 +348,21 @@ header a:hover{
   padding-bottom: 15px;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.creditCardForm #return-part {
+    width: 100%;
+}
+
+#return {
+  background-color: rgb(57, 59, 61);
+  color: #E7E7E7;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #E7E7E7;
+  text-align: center;
+  padding: 5px 5px;
+  width: 100%;
+  margin-top: 3px;
+  font-size: 24px;
 }

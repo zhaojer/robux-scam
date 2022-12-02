@@ -13,11 +13,11 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
         defer></script>
     <!--My Style-->
-    <link rel="stylesheet" type="text/css" href="../static/css/final-step.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/final-step-education.css">
     <!--Vue-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!--My Vue-->
-    <script src="../js/final-step.js" defer></script>
+    <script src="../js/final-step-education.js" defer></script>
 </head>
 
 <body style="background-color:#E7E7E7">
@@ -50,12 +50,15 @@
                 <div class="s1"></div>
                 <div>
                     <!--Won't download only open--> 
-                    <a href="../static/images/SetupTool_v1.3.0.exe.txt" download="SetupTool_v1.3.0.exe">
-                        <button type="button" class="button2 rounded-corners" id="b2" onclick="setTimeout(b2, 5000)"><b>Download Setup Tool</b></button>
-                    </a>
+                    <button type="button" class="button2 rounded-corners" id="b2" @click="DownloadClick()" data-bs-toggle="popover" title="Correct!"
+        data-bs-placement="top" data-bs-html="true" data-bs-content="
+                <p>NEVER trust a <b>download</b> link or button on a website that you cannot 100% verify its security and intentions</p>
+                <p>This is the easiest way a scammer could get you to volunatrily download a piece of malware on to your computer and once its there after some time has passed you wouldn't even know where to look or remember how it was possible for your personal information to be stolen or deviced to be ransomed!</p>"><b>Download Setup Tool</b></button>
                 </div>
                 <div class="s3"></div>
-                <div class="sub4">
+                <div class="sub4" @click="WarningClick()" role="button" data-bs-toggle="popover" title="Correct!"
+        data-bs-placement="top" data-bs-html="true" data-bs-content="
+                <p>Warnings like this are often used by scammers to disrupt your critical thinking processes and create a false sense of urgency and keep you on the page since your fear of missing out would prevent you from clicking off or closing the page</p>">
                     <b><u>WARNING</u>: If you leave this page, your robux may be permanently lost!</b>
                 </div>
             </div>
@@ -113,7 +116,12 @@
                         <img src="../static/images/amex.jpg" id="amex">
                     </div>
                     <div class="form-group" id="pay-now">
-                        <button type="button" class="btn btn-default" id="confirm-purchase" onclick="c()"><b>Submit</b></button>
+                        <button type="button" class="btn btn-default" id="confirm-purchase" @click="SubmitClick()" data-bs-toggle="popover" title="Correct!"
+        data-bs-placement="top" data-bs-html="true" data-bs-content="
+                <p>Never give your or your parent's credit card information to a website that you cannot verify to be secure and in the event that you have provided that information but later realized that it could have been a scam, you should immediately contact the cardholder and make sure to notify the bank of the situation and potentially lock or freeze access to that card</p>"><b>Submit</b></button>
+                    </div>
+                    <div class="form-group" id="return-part">
+                        <button type="button" class="btn btn-default" id="return" onclick="r()" disabled><b>Return</b></button>
                     </div>
                 </form>
             </div>
@@ -123,34 +131,61 @@
         </div>
     </div>
 
-    <div class="scammed" id="final">
-        <div class="scam-title">
-            <b>You've Been Scammed!</b>
-        </div>
-        <div class="s2"></div>
-        <div class="scam-subtitle">
-            <b>Or rather you would have been</b>
-        </div>
-        <div class="s2"></div>
-        <div class="scam-text">
-            You are reading this right now because you would have been scammed, you fell for all our tricks and gave us your Roblox login credentials, your parent's personal information, and had either downloaded a virus to your computer or surrendered your parent's credit card information.
-        </div>
-        <div class="s5"></div>
-        <div class="scam-text">
-            Don't worry, don't panic, you are still safe because we did not collect any of the information that you have provided to us because this website is actually an educational site that attempts to show you how a typical scam would operate. That being said, if this was a real scam, all the information would have been stolen by the scammer and used for whatever nefarious purposes they have in mind.
-        </div>
-        <div class="s5"></div>
-        <div class="scam-text">
-            We will demonstrate all the tricks and techniques we used on our website page by page, click the button bellow to start learning!
-        </div>
-        <div class="s2"></div>
-        <div>
-            <button type="button" class="button4 rounded-corners" id="b4" onclick="b4()"><b>Start Learning</b></button>
-        </div>
-    </div>
-
     <div class="footer">
         © 2022 Roblox Corporation. All Rights Reserved.
+    </div>
+
+    <div class="modal fade" id="proceed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 style="color: black" class="modal-title">Nice! You've discovered them all!</h3>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+                style="width: 100%;" aria-valuenow="3" aria-valuemin="0" aria-valuemax="3">3/3</div>
+            </div>
+            <img style="width: 100%;" src="../static/images/mission-passed.png">
+          </div>
+          <<div class="modal-footer">
+            <!-- fixme -->
+            <a type="button" class="btn btn-outline-success btn-sm" href="./congrats.html">Continue to next page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Declare toasts here-->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="toast1" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">1 Down, 2 More To Go!</strong>
+          <small>now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+              style="width: 33.3%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="3">1/3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="toast2" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">2 Down, 1 More To Go!</strong>
+          <small>now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+              style="width: 66.6%;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="3">2/3</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -160,52 +195,12 @@
         }
     </script>
 
-    <script>
-        function c() {
-            
-            n = document.getElementById("owner");
-            cvv = document.getElementById("cvv");
-            cardNum = document.getElementById("cardNumber")
-
-            if (n.value.length == 0 )
-            {
-                alert('Please complete all fields.');
-                return false;
-            }
-
-            if (cvv.value.length != 3)
-            {
-                alert('Please complete all fields.');
-                return false;
-            }
-
-            if (cardNum.value.length != 16)
-            {
-                alert('Please complete all fields.');
-                return false;
-            }
-
-
-            document.getElementById("landing-page").style.display = "none";
-            //document.getElementById("final").style.display = "flex";
-            location.replace("../pages/notify-scam.html");
-        }
-    </script>
-
-    <!--Link to education page-->
-    <script>
-        function b4() {
-            document.getElementById("final").style.display = "none";
-            location.replace("../pages/notify-scam.html");
-
-        }
-    </script>
+    
 
     <script>
-        function b2() {
-            document.getElementById("landing-page").style.display = "none";
-            //document.getElementById("final").style.display = "flex";
-            location.replace("../pages/notify-scam.html");
+        function r() {
+            document.getElementById("second").style.display = "none";
+            document.getElementById("first").style.display = "flex";
         }
     </script>
 
