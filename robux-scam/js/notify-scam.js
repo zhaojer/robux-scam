@@ -40,8 +40,9 @@ function typeWriter(text, i, ID, fnCallback) {
 // start a typewriter animation for a text in the dataText array
 function StartTextAnimation(i) {
     if (typeof textToDisplay[i] == 'undefined') {
-        let butt = document.createElement("button");
-        butt.className = "btn btn-successbtn btn-outline-success myButton";
+        let butt = document.createElement("a");
+        butt.href = "./education.html"
+        butt.className = "btn btn-outline-success btn-lg myButton";
         butt.innerText = "Continue";
         document.getElementById("continue").appendChild(butt);
         return;
