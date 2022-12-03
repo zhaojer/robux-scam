@@ -2,10 +2,13 @@
 
 const { createApp } = Vue
 
+var submitClick = false;
+
 createApp({
   data() {
     return {
       message: 'hello vue',
+      tutorialModal: {},
 
       popoverList: [],
       toastList: [],
@@ -19,6 +22,30 @@ createApp({
     }
   },
   methods: {
+    preventLeaving: function () {
+      // this gets invoked ONLY if user has modified the page somehow, e.g. clicked on the page
+      // this is probably some browser thing
+      window.addEventListener('beforeunload', function (e) {
+        // no need to trigger this function for navigating to the next page
+        if (submitClick) {
+          console.log("here")
+          return undefined;
+        }
+        e.preventDefault(); //per the standard
+        e.returnValue = ''; //required for Chrome
+      });
+    },
+
+    openTutorial: function() {
+      this.tutorialModal = new bootstrap.Modal(document.getElementById("tutorial-modal"));
+      this.tutorialModal.show();
+    },
+
+    login: function () {
+      submitClick = true;
+      location.href = "../pages/landing-edu.html"
+    },
+
     checkCompletion: function () {
       if (this.numLogoClick >= 2 && this.numTitleClick >= 2 && this.numButtonClick >= 2) {
         console.log("done");
@@ -60,16 +87,20 @@ createApp({
       }
     },
   },
-  
-  mounted() {
-  const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-  this.popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-  })
 
-  const toastElList = [].slice.call(document.querySelectorAll('.toast'))
-  this.toastList = toastElList.map(function (toastEl) {
-    return new bootstrap.Toast(toastEl)
-  })
-}
+  mounted() {
+    const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    this.popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+    const toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    this.toastList = toastElList.map(function (toastEl) {
+      return new bootstrap.Toast(toastEl)
+    })
+
+    this.preventLeaving();
+
+    setTimeout(this.openTutorial, 1000)
+  }
 }).mount('#login-page')

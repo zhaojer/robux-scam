@@ -1,0 +1,57 @@
+#ed-explanation {
+    width: 100%;
+    height: auto;
+    color: black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 90%;
+    /* transition: filter 1s;
+    -webkit-transition: -webkit-filter 1s; */
+}
+
+/* img:hover {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+  } */
+
+.carousel-inner {
+    height: 100%;
+}
+
+#caption1 {
+    background-color: #F2F4F5;
+    opacity: 85%;
+    margin-bottom: 4%;
+}
+
+#caption2 {
+    background-color: #0096FF;
+    color: white;
+    opacity: 95%;
+    margin-bottom: 4%;
+}
+
+#caption3 {
+    background-color: #50C878;
+    color: white;
+    opacity: 95%;
+    margin-bottom: 4%;
+}
+
+#caption4 {
+    background-color: #32CD32;
+    color: white;
+    opacity: 90%;
+    padding-top: 1%;
+    padding-bottom: 0;
+    margin-bottom: 4%;
+}
+
+.popover {
+    display: block;
+    background-color: black;
+}

@@ -4,13 +4,21 @@
   <title>Roblox</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+    defer></script>
+  <!--My Style-->
+  <link rel="stylesheet" type="text/css" href="../static/css/login.css">
+  <!-- Vue -->
   <link href="https://images.rbxcdn.com/7bba321f4d8328683d6e59487ce514eb" rel="icon">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="../js/login-edu.js" defer></script>
 
   <link rel="stylesheet" data-bundlename="StyleGuide" data-bundle-source="Main"
-    href="https://css.rbxcdn.com/34b4df2feb1cac7201892b667c8185409f3d6271e650a5f313976062e3ca1ce5.css">
+    href="../static/css/roblox.css">
   <link rel="stylesheet" data-bundlename="RobloxBadges" data-bundle-source="Main"
     href="https://css.rbxcdn.com/da45920fef8b22d35ee6cce0702d290241252fbfd99695e2abc0934d20de0974.css">
   <link rel="stylesheet" data-bundlename="Navigation" data-bundle-source="Main"
@@ -34,23 +42,23 @@
             <div id="header-menu-icon" class="rbx-nav-collapse"><button type="button"
                 class="btn-primary-xs btn-min-width" id="skip-to-main-content">Skip to Main Content</button></div>
             <div class="navbar-header">
-              <a class="navbar-brand" href="/home">
+              <a class="navbar-brand" href="./login-edu.html">
                 <span class="icon-logo"></span><span class="icon-logo-r"></span>
               </a>
             </div>
           </div>
           <ul class="nav rbx-navbar hidden-xs hidden-sm col-md-5 col-lg-4">
             <li>
-              <a class="font-header-2 nav-menu-title text-header" href="/discover">Discover</a>
+              <a class="font-header-2 nav-menu-title text-header" href="#">Discover</a>
             </li>
             <li>
-              <a class="font-header-2 nav-menu-title text-header" href="/catalog">Avatar Shop</a>
+              <a class="font-header-2 nav-menu-title text-header" href="#">Avatar Shop</a>
             </li>
             <li>
-              <a class="font-header-2 nav-menu-title text-header" href="/develop">Create</a>
+              <a class="font-header-2 nav-menu-title text-header" href="#">Create</a>
             </li>
             <li>
-              <a class="font-header-2 nav-menu-title text-header robux-menu-btn" href="/robux?ctx-nav">
+              <a class="font-header-2 nav-menu-title text-header robux-menu-btn" href="#">
                 <div class="menu-text-container">
                   <span class="robux-10-percent-more-label">10% More</span>
                   <span class="font-header-2">Robux</span>
@@ -61,16 +69,16 @@
 
           <ul class="nav rbx-navbar hidden-md hidden-lg col-xs-12">
             <li>
-              <a class="font-header-2 nav-menu-title text-header" href="/discover">Discover</a>
+              <a class="font-header-2 nav-menu-title text-header" href="#">Discover</a>
             </li>
             <li>
-              <a class="font-header-2 nav-menu-title text-header" href="/catalog">Avatar Shop</a>
+              <a class="font-header-2 nav-menu-title text-header" href="#">Avatar Shop</a>
             </li>
             <li>
-              <a class="font-header-2 nav-menu-title text-header" href="/develop">Create</a>
+              <a class="font-header-2 nav-menu-title text-header" href="#">Create</a>
             </li>
             <li>
-              <a class="font-header-2 nav-menu-title text-header robux-menu-btn" href="/robux?ctx=nav">
+              <a class="font-header-2 nav-menu-title text-header robux-menu-btn" href="#">
                 <div class="menu-text-container">
                   <span class="robux-10-percent-more-label">10% More</span>
                   <span class="font-header-2">Robux</span>
@@ -127,9 +135,6 @@
                     class="rbx-navbar-signup btn-growth-sm nav-menu-title signup-button"
                     href="file:///account/signupredir?returnUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fwbguo%2FOneDrive%2FDocuments%2FEECS497%2Frobux-scam%2Frobux-scam%2Fpages%2Flogin.html"
                     id="sign-up-button">Sign Up</a></li>
-                <li class="login-action"><a class="rbx-navbar-login btn-secondary-sm nav-menu-title rbx-menu-item"
-                    href="file:///login?returnUrl=file%3A%2F%2F%2FC%3A%2FUsers%2Fwbguo%2FOneDrive%2FDocuments%2FEECS497%2Frobux-scam%2Frobux-scam%2Fpages%2Flogin.html">Log
-                    In</a></li>
                 <li class="rbx-navbar-right-search"><button type="button"
                     class="rbx-menu-item btn-navigation-nav-search-white-md"><span
                       class="icon-nav-search-white"></span></button></li>
@@ -159,9 +164,14 @@
         </noscript>
       </div>
       <div class="content">
-        <div id="react-login-container" class="login-container" data-return-url="" data-enable-react-ui="true">
+        <div class="login-container" data-return-url="" data-enable-react-ui="true">
           <div id="login-base">
-            <div class="section-content login-section">
+            <div class="section-content login-section" data-bs-toggle="popover" data-bs-placement="right"
+              data-bs-html="true" title="<span>Correct!</span>" data-bs-content="
+            <p>ALways remember: There ain't no such thing as a free lunch.
+              If statements about “winning” or getting something for “free”
+              feel too good to be true, they most likely are.</p>
+            ">
               <h1 class="login-header">Login to Roblox</h1>
               <div id="login-form">
                 <div>
@@ -180,15 +190,14 @@
                           placeholder="Password" value="">
                         <div aria-live="polite"></div>
                       </div>
-                      <button type="button" id="login-button"
-                        class="btn-full-width login-button btn-secondary-md" >Log In</button>
+                      <button type="button" id="login-button" @click="login()"
+                        class="btn-full-width login-button btn-secondary-md">Log In</button>
                     </form>
                   </div>
                 </div>
               </div>
               <div class="text-center forgot-credentials-link">
-                <a id="forgot-credentials-link" class="text-link"
-                  href="https://www.roblox.com/login/forgot-password-or-username" target="_self">Forgot Password or
+                <a id="forgot-credentials-link" class="text-link" href="#" target="_self">Forgot Password or
                   Username?</a>
               </div>
               <div>
@@ -215,30 +224,33 @@
             </div>
           </div>
         </div>
-
-
       </div>
       <footer id="footer-container" style="padding: 0;" data-is-giftcards-footer-enabled="True">
         <div class="footer">
           <ul class="row footer-links">
-            <li class="footer-link"><a class="text-footer-nav" href="/info/about-us?locale=en_us" target="_blank">About
+            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/about-us?locale=en_us"
+                target="_blank">About
                 Us</a></li>
-            <li class="footer-link"><a class="text-footer-nav" href="/info/jobs?locale=en_us" target="_blank">Jobs</a>
+            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/jobs?locale=en_us"
+                target="_blank">Jobs</a>
             </li>
-            <li class="footer-link"><a class="text-footer-nav" href="/info/blog?locale=en_us" target="_blank">Blog</a>
+            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/blog?locale=en_us"
+                target="_blank">Blog</a>
             </li>
-            <li class="footer-link"><a class="text-footer-nav" href="/info/parents?locale=en_us"
+            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/parents?locale=en_us"
                 target="_blank">Parents</a></li>
-            <li class="footer-link"><a class="text-footer-nav giftcards" href="/giftcards?locale=en_us"
-                target="_blank">Gift Cards</a></li>
-            <li class="footer-link"><a class="text-footer-nav" href="/info/help?locale=en_us" target="_blank">Help</a>
+            <li class="footer-link"><a class="text-footer-nav giftcards"
+                href="https://www.roblox.com/giftcards?locale=en_us" target="_blank">Gift Cards</a></li>
+            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/help?locale=en_us"
+                target="_blank">Help</a>
             </li>
-            <li class="footer-link"><a class="text-footer-nav" href="/info/terms?locale=en_us" target="_blank">Terms</a>
+            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/terms?locale=en_us"
+                target="_blank">Terms</a>
             </li>
-            <li class="footer-link"><a class="text-footer-nav" href="/info/accessibility?locale=en_us"
-                target="_blank">Accessibility</a></li>
-            <li class="footer-link"><a class="text-footer-nav privacy" href="/info/privacy?locale=en_us"
-                target="_blank">Privacy</a></li>
+            <li class="footer-link"><a class="text-footer-nav"
+                href="https://www.roblox.com/info/accessibility?locale=en_us" target="_blank">Accessibility</a></li>
+            <li class="footer-link"><a class="text-footer-nav privacy"
+                href="https://www.roblox.com/info/privacy?locale=en_us" target="_blank">Privacy</a></li>
             <li></li>
           </ul>
           <div class="row copyright-container">
@@ -250,6 +262,78 @@
           </div>
         </div>
       </footer>
+
+    </div>
+    <!-- tutorial -->
+    <div class="modal fade" id="tutorial-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Tutorial</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="ed-explanation" class="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="0" class="active"
+                  aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="1"
+                  aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="2"
+                  aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#ed-explanation" data-bs-slide-to="3"
+                  aria-label="Slide 4"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="../static/images/slide1.gif" class="d-block w-100">
+                  <div id="caption1" class="carousel-caption d-none d-md-block">
+                    <h5>Let's Go One More Time</h5>
+                    <p>We will interactively guide you through our 'scamming' website one more time.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                  <img src="../static/images/slide2.gif" class="d-block w-100">
+                  <div id="caption2" class="carousel-caption d-none d-md-block">
+                    <h5>Carefully Look Over Each Page</h5>
+                    <p class="white-p">Click on the elements of the page that looks suspicious!
+                      If correct, a message will be displayed that teaches you how is it a potential scam.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                  <img src="../static/images/slide3.gif" class="d-block w-100">
+                  <div id="caption3" class="carousel-caption d-none d-md-block">
+                    <h5>Making Progress</h5>
+                    <p class="white-p">Click on the same element to close to message. <br>
+                      Your progress will be displayed on the bottom right.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="10000">
+                  <img src="../static/images/slide4.gif" class="d-block w-100">
+                  <div id="caption4" class="carousel-caption d-none d-md-block">
+                    <h5>Next Page</h5>
+                    <p class="white-p">After interacting with all suspicious elements, move on to next page!</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#ed-explanation"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#ed-explanation"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>
