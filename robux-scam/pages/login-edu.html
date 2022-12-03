@@ -42,7 +42,20 @@
             <div id="header-menu-icon" class="rbx-nav-collapse"><button type="button"
                 class="btn-primary-xs btn-min-width" id="skip-to-main-content">Skip to Main Content</button></div>
             <div class="navbar-header">
-              <a class="navbar-brand" href="./login-edu.html">
+              <a class="navbar-brand" href="#" @click="logoClick()" role="button"  data-bs-toggle="popover" data-bs-placement="right"
+              data-bs-html="true" title="<span>Correct!</span>" data-bs-content="
+            <p><em>Look closely at the URL of this webpage, is this the URL of the real Roblox login page?</em></p>
+            <p>This is the actual URL: <strong> https://www.roblox.com/login </strong>. <br> Notice the difference?</p>
+            <p>This is a common phishing technique called <em>URL Hijacking</em>,
+              in which the URL of the phishing website is really similar to that of the official website.
+            </p>
+            <p>When you are on website that asks for your personal information (like login info),
+              always make sure you are on the actual, official website by checking the URL!
+            </p>
+            <img style='width: 100%; height: auto' src='../static/images/roblox-search.jpg'>
+            <p>
+              When in doubt, Google is your best friend: Search the official website on Google to get the real URL!</p>
+            ">
                 <span class="icon-logo"></span><span class="icon-logo-r"></span>
               </a>
             </div>
@@ -166,11 +179,18 @@
       <div class="content">
         <div class="login-container" data-return-url="" data-enable-react-ui="true">
           <div id="login-base">
-            <div class="section-content login-section" data-bs-toggle="popover" data-bs-placement="right"
-              data-bs-html="true" title="<span>Correct!</span>" data-bs-content="
-            <p>ALways remember: There ain't no such thing as a free lunch.
-              If statements about “winning” or getting something for “free”
-              feel too good to be true, they most likely are.</p>
+            <div @click="formClick()" role="button" class="section-content login-section" data-bs-toggle="popover" data-bs-placement="right"
+            data-bs-html="true" title="<span>Correct!</span>" data-bs-content="
+            <p>The fact that the Login page looks almost the exact same as that of the official Roblox website
+              easily establishes a sense of <em>authority</em> to the victim (you), causing them to lower their guard and 
+              divulge their personal information (your username and password)!</p>
+            <p>Other than being cautious all the time and always remembering to
+                check the URL before submitting any of your information, you may also use
+                a password manager (built-in to modern web browsers), which autofills your password!</p>
+            <img style='width: 100%; height: auto;' src='../static/images/password-manager.gif'>
+            <p>As such, whenever a webpage you have accessed previously does not autofill your password,
+              you know something is wrong about this webpage!
+            </p>
             ">
               <h1 class="login-header">Login to Roblox</h1>
               <div id="login-form">
@@ -190,7 +210,7 @@
                           placeholder="Password" value="">
                         <div aria-live="polite"></div>
                       </div>
-                      <button type="button" id="login-button" @click="login()"
+                      <button type="button" id="login-button"
                         class="btn-full-width login-button btn-secondary-md">Log In</button>
                     </form>
                   </div>
@@ -267,14 +287,47 @@
         </div>
       </div>
     </footer>
+    <div class="modal fade" id="proceed" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Nice! You've discovered them all!</h3>
+          </div>
+          <div class="modal-body">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 100%;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="2">2/2</div>
+            </div>
+            <img style="width: 100%;" src="../static/images/mission-passed.png">
+          </div>
+          <div class="modal-footer">
+            <!-- fixme -->
+            <a type="button" @click="finished()" class="btn btn-outline-success btn-sm" href="./landing-edu.html">Continue to next page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="toast1" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">1 Down, 1 More To Go!</strong>
+          <small>now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar"
+              style="width: 50%;" aria-valuenow="1" aria-valuemin="0" aria-valuemax="2">1/2</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- tutorial -->
-    <!-- <div class="modal fade" id="tutorial-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <div class="modal fade" id="tutorial-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Tutorial</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div id="ed-explanation" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -325,7 +378,7 @@
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
               </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#ed-explanation"
+              <button @click="updateTutorialProgress()" class="carousel-control-next" type="button" data-bs-target="#ed-explanation"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
@@ -333,11 +386,11 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+            <button v-show="completedTutorial" type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </body>
 

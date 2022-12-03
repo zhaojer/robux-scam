@@ -52,6 +52,10 @@ img {
 }
 
 .popover {
-    display: block;
-    background-color: black;
+    max-width: 32vw;
+}
+
+.popover-header {
+    text-align: center;
+    font-size: 3vh;
 }

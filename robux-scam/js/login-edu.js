@@ -7,18 +7,18 @@ var submitClick = false;
 createApp({
   data() {
     return {
-      message: 'hello vue',
       tutorialModal: {},
+      completedTutorial: false,
+      numTutorialClick: 0,
+      // timeStarted: 0,
 
       popoverList: [],
       toastList: [],
-
       completePopup: {},
 
       // track the number of clicks for each popover
       numLogoClick: 0,
-      numTitleClick: 0,
-      numButtonClick: 0
+      numFormClick: 0,
     }
   },
   methods: {
@@ -39,31 +39,36 @@ createApp({
     openTutorial: function() {
       this.tutorialModal = new bootstrap.Modal(document.getElementById("tutorial-modal"));
       this.tutorialModal.show();
+      // this.timeStarted = Math.floor(Date.now() / 1000);
+
+      setTimeout(() => {
+        this.completedTutorial = true;
+      }, 50000)
     },
 
-    login: function () {
+    updateTutorialProgress: function() {
+      this.numTutorialClick += 1;
+      console.log();
+      if (this.numTutorialClick >= 4) {
+        this.completedTutorial = true;
+      }
+    },
+
+    finished: function () {
+      // e.preventDefault();
       submitClick = true;
-      location.href = "../pages/landing-edu.html"
+      // location.href = "../pages/landing-edu.html"
     },
 
     checkCompletion: function () {
-      if (this.numLogoClick >= 2 && this.numTitleClick >= 2 && this.numButtonClick >= 2) {
-        console.log("done");
+      if (this.numLogoClick >= 2 && this.numFormClick >= 2) {
         this.completePopup = new bootstrap.Modal(document.getElementById("proceed"));
         this.completePopup.show();
         return;
       }
-      let count = 0;
-      if (this.numLogoClick >= 2) {
-        ++count;
+      else {
+        this.toastList[0].show();
       }
-      if (this.numTitleClick >= 2) {
-        ++count;
-      }
-      if (this.numButtonClick >= 2) {
-        ++count;
-      }
-      this.toastList[count - 1].show();
     },
 
     logoClick: function () {
@@ -73,16 +78,9 @@ createApp({
       }
     },
 
-    titleClick: function () {
-      this.numTitleClick += 1;
-      if (this.numTitleClick % 2 === 0) {
-        setTimeout(this.checkCompletion, 500);
-      }
-    },
-
-    buttonClick: function () {
-      this.numButtonClick += 1;
-      if (this.numButtonClick % 2 === 0) {
+    formClick: function () {
+      this.numFormClick += 1;
+      if (this.numFormClick % 2 === 0) {
         setTimeout(this.checkCompletion, 500);
       }
     },
@@ -101,6 +99,6 @@ createApp({
 
     this.preventLeaving();
 
-    setTimeout(this.openTutorial, 1000)
+    setTimeout(this.openTutorial, 250)
   }
 }).mount('#login-page')
