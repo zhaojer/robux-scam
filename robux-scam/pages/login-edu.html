@@ -17,8 +17,7 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="../js/login-edu.js" defer></script>
 
-  <link rel="stylesheet" data-bundlename="StyleGuide" data-bundle-source="Main"
-    href="../static/css/roblox.css">
+  <link rel="stylesheet" data-bundlename="StyleGuide" data-bundle-source="Main" href="../static/css/roblox.css">
   <link rel="stylesheet" data-bundlename="RobloxBadges" data-bundle-source="Main"
     href="https://css.rbxcdn.com/da45920fef8b22d35ee6cce0702d290241252fbfd99695e2abc0934d20de0974.css">
   <link rel="stylesheet" data-bundlename="Navigation" data-bundle-source="Main"
@@ -30,7 +29,8 @@
     href="https://css.rbxcdn.com/7fc70d7c74b3742f897833c8ea8a4997dc768f30237a7e0f4ef88c46ed583b76.css">
 </head>
 
-<body style="overflow-y: hidden;" id="rbx-body" class="rbx-body   light-theme gotham-font">
+<!-- Weird fix that brings everything into one page -->
+<body style="margin: 0px; border: 1px black solid;" id="rbx-body" class="rbx-body light-theme gotham-font">
 
   <div id="login-page">
 
@@ -155,7 +155,7 @@
       </div>
 
     </div>
-    <div class="container-main touch" id="container-main" tabindex="-1">
+    <div style="padding: 0;" class="container-main touch" id="container-main" tabindex="-1">
       <div class="alert-container">
         <noscript>
           <div>
@@ -225,47 +225,50 @@
           </div>
         </div>
       </div>
-      <footer id="footer-container" style="padding: 0;" data-is-giftcards-footer-enabled="True">
-        <div class="footer">
-          <ul class="row footer-links">
-            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/about-us?locale=en_us"
-                target="_blank">About
-                Us</a></li>
-            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/jobs?locale=en_us"
-                target="_blank">Jobs</a>
-            </li>
-            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/blog?locale=en_us"
-                target="_blank">Blog</a>
-            </li>
-            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/parents?locale=en_us"
-                target="_blank">Parents</a></li>
-            <li class="footer-link"><a class="text-footer-nav giftcards"
-                href="https://www.roblox.com/giftcards?locale=en_us" target="_blank">Gift Cards</a></li>
-            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/help?locale=en_us"
-                target="_blank">Help</a>
-            </li>
-            <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/terms?locale=en_us"
-                target="_blank">Terms</a>
-            </li>
-            <li class="footer-link"><a class="text-footer-nav"
-                href="https://www.roblox.com/info/accessibility?locale=en_us" target="_blank">Accessibility</a></li>
-            <li class="footer-link"><a class="text-footer-nav privacy"
-                href="https://www.roblox.com/info/privacy?locale=en_us" target="_blank">Privacy</a></li>
-            <li></li>
-          </ul>
-          <div class="row copyright-container">
-            <div class="col-sm-6 col-md-3"></div>
-            <div class="col-sm-12">
-              <p class="text-footer footer-note">©2022 Roblox Corporation. Roblox, the Roblox logo and Powering
-                Imagination are among our registered and unregistered trademarks in the U.S. and other countries.</p>
-            </div>
+    </div>
+    <footer style="position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 100%; padding-bottom: 1%;">
+      <div class="footer">
+        <ul class="footer-links">
+          <li></li>
+          <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/about-us?locale=en_us"
+              target="_blank">About
+              Us</a></li>
+          <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/jobs?locale=en_us"
+              target="_blank">Jobs</a>
+          </li>
+          <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/blog?locale=en_us"
+              target="_blank">Blog</a>
+          </li>
+          <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/parents?locale=en_us"
+              target="_blank">Parents</a></li>
+          <li class="footer-link"><a class="text-footer-nav giftcards"
+              href="https://www.roblox.com/giftcards?locale=en_us" target="_blank">Gift Cards</a></li>
+          <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/help?locale=en_us"
+              target="_blank">Help</a>
+          </li>
+          <li class="footer-link"><a class="text-footer-nav" href="https://www.roblox.com/info/terms?locale=en_us"
+              target="_blank">Terms</a>
+          </li>
+          <li class="footer-link"><a class="text-footer-nav"
+              href="https://www.roblox.com/info/accessibility?locale=en_us" target="_blank">Accessibility</a></li>
+          <li class="footer-link"><a class="text-footer-nav privacy"
+              href="https://www.roblox.com/info/privacy?locale=en_us" target="_blank">Privacy</a></li>
+          <li></li>
+        </ul>
+        <div class="row copyright-container">
+          <div class="col-sm-6 col-md-3"></div>
+          <div class="col-sm-12">
+            <p class="text-footer footer-note">©2022 Roblox Corporation. Roblox, the Roblox logo and Powering
+              Imagination are among our registered and unregistered trademarks in the U.S. and other countries.</p>
           </div>
         </div>
-      </footer>
-
-    </div>
+      </div>
+    </footer>
     <!-- tutorial -->
-    <div class="modal fade" id="tutorial-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <!-- <div class="modal fade" id="tutorial-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
       aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -334,7 +337,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </body>
 
