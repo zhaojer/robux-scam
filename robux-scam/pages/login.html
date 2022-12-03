@@ -258,6 +258,7 @@
                     </div>
                     <script>
                       function myFunction() {
+                        document.getElementById("notif").innerHTML = "";
                         let emptyNotif = "<p class='form-control-label xsmall text-error login-error' id='login-form-error'>Username and password required</p>"
                         let incorrectNotif = "<p class='form-control-label xsmall text-error login-error' id='login-form-error'>Incorrect username or password.</p>"
                         if (document.getElementById("login-username").value == "" ||
