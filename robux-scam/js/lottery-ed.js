@@ -190,7 +190,7 @@ createApp({
         .attr("y", 13)
         .attr("text-anchor", "middle")
         .text("SPIN")
-        .style({ "font-weight": "bold", "font-size": "30px", "cursor": "pointer" });
+        .style({ "font-weight": "bold", "font-size": "30px", "cursor": "pointer", "pointer-events": "none" });
       // declare listener
       this.spinButton.on("click", this.spinWheel);
     },

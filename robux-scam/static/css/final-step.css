@@ -1,10 +1,14 @@
 html, body{
     height: 100%;
+    background-color:#EBECF0;
+    font-family: Roboto, sans-serif;
 }
 
-#landing-page {
+#final-step {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .topnav {
@@ -28,6 +32,11 @@ html, body{
     height: auto;
 }
 
+#spacer {
+  width: 100%;
+  height: 9%;
+}
+
 .logo {
   max-width:90%;
   max-height:90%;
@@ -46,48 +55,76 @@ html, body{
 }
 
 .flex-container {
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
 .flex-item {
-  background-color: rgb(57, 59, 61);
-  height: 75%;
-  width: 50%;
-  border-width: 20px;
-  border-style: solid;
-  border-color: rgb(35, 37, 39);
-  padding: 25px;
-
+  background-color: white;
+  width: 40%;
+  padding: 45px;
+  margin: 45px;
+  border-radius: 3px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
   flex-direction: column;
+  max-height: 650px;
+}
+
+.went-wrong {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.inner-flex {
+  padding: 15px 0px;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.button-container {
+  width: 100%;
 }
 
 .sub1 {
   font-size: 40px;
-  color: white;
-  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.title {
+  font-weight: 900;
 }
 
 .sub2 {
   font-size: 18px;
-  color: #E7E7E7;
-  font-family: 'Arial', sans-serif;
+}
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .sub3 {
   width: 100%;
   font-size: 20px;
-  color: #E7E7E7;
-  font-family: 'Arial', sans-serif;
   text-align: left;
 }
 
@@ -99,33 +136,6 @@ html, body{
   height: 20px;
 }
 
-
-.button1 {
-  background-color: #E7E7E7;
-  color: dimgray;
-  border: none;
-  text-align: center;
-  height: 50px;
-  width: 200px;
-  padding: 5px 5px;
-}
-
-.rounded-corners {
-  border-radius: 5px;
-}
-
-.button2 {
-  background-color: rgb(57, 59, 61);
-  color: #E7E7E7;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #E7E7E7;
-  text-align: center;
-  height: 50px;
-  width: 200px;
-  padding: 5px 5px;
-}
-
 .s3 {
   height: 100px;
 }
@@ -133,9 +143,10 @@ html, body{
 .sub4 {
   width: 100%;
   font-size: 18px;
-  color: white;
-  font-family: 'Arial', sans-serif;
   text-align: left;
+  display: flex;
+  align-items: center;
+  flex: 2;
 }
 
 .s4 {
@@ -147,7 +158,6 @@ html, body{
 }
 
 .form {
-  background-color: white;
   height: 800px;
   width: 800px;
   border-width: 3px;
@@ -156,201 +166,82 @@ html, body{
   padding: 25px;
 }
 
-
-
-
 .container-fluid{
     padding:0;
     margin:0;
 }
 
-header{
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-    padding: 25px 40px;
-    background-color: #3A56B7;
-    overflow: hidden;
+
+.credit-card {
+  justify-content: space-around;
 }
 
-header .limiter{
-    max-width: 1000px;
-    margin: 0px auto;
+.heading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-header h3{
-    font: normal 24px/1.5 'Arial', sans-serif;
-    float: left;
-    color: #fff;
-    margin:0;
+.payment {
+  flex: 5;
 }
 
-header a{
-    color:#fff;
-    float: right;
-    text-decoration: none;
-    display: inline-block;
-    padding: 13px 50px;
-    border-radius: 3px;
-    font: bold 14px/1 'Arial', sans-serif;
-    text-transform: uppercase;
-    background-color:#F05283;
-    opacity: 0.9;
+.payment form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: larger;
 }
 
-header a:hover{
-    color: #fff;
-    text-decoration: none;
-    opacity: 1;
+.form-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-@media (max-width: 850px) {
-
-    header h3{
-        float: none;
-        text-align: center;
-    }
-
-    header a{
-        margin-top: 20px;
-        float: none;
-    }
-
+.all-expiration {
+  flex: 1;
 }
 
-.creditCardForm {
-    background-color: rgb(57, 59, 61);
-    height: 80%;
-    width: 50%;
-    border-width: 25px;
-    border-style: solid;
-    border-color: rgb(35, 37, 39);
-    padding: 50px;
-    color:  #E7E7E7;
+.month {
+  width: auto;
 }
 
-.creditCardForm label {
-    width: 100%;
-    margin-bottom: 10px;
+.year {
+  width: auto;
 }
 
-.creditCardForm .heading h1 {
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-    color: white;
+.owner {
+    flex: 2;
 }
 
-.creditCardForm .payment {
-    float: left;
-    font-size: 18px;
-    padding: 10px 25px;
-    margin-top: 20px;
-    position: relative;
+.CVV {
+    flex: 1;
 }
 
-.creditCardForm .payment .form-group {
-    float: left;
-    margin-bottom: 15px;
-}
-
-.creditCardForm .payment .form-control {
-    line-height: 40px;
-    height: auto;
-    padding: 0 16px;
-}
-
-.creditCardForm .owner {
-    width: 63%;
-    margin-right: 10px;
-}
-
-.creditCardForm .CVV {
-    width: 35%;
-}
-
-.creditCardForm #card-number-field {
-    width: 100%;
-}
-
-.creditCardForm #expiration-date {
-    width: 49%;
-}
-
-.creditCardForm #credit_cards {
-    width: 50%;
-    margin-top: 25px;
-    text-align: right;
-}
-
-.creditCardForm #pay-now {
-    width: 100%;
-    margin-top: 25px;
-}
-
-.creditCardForm .payment .btn {
-    width: 100%;
-    margin-top: 3px;
-    font-size: 24px;
-    background-color: rgb(57, 59, 61);
-
-    background-color: #E7E7E7;
-    color: dimgray;
-    border: none;
-}
-
-.creditCardForm .payment select {
-    padding: 10px;
-    margin-right: 15px;
+#expiration-date {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .transparent {
     opacity: 0.2;
 }
 
-@media(max-width: 650px) {
-    .creditCardForm .owner,
-    .creditCardForm .CVV,
-    .creditCardForm #expiration-date,
-    .creditCardForm #credit_cards {
-        width: 100%;
-    }
-    .creditCardForm #credit_cards {
-        text-align: left;
-    }
-}
-
-.scammed {
-  display: none;
-  height: 100%;
-  width: 100%;
-  padding: 50px;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background-color: black;
-}
-
-.scam-title {
-  color: white;
-  font-family: 'Courier New', monospace;
-  font-size: 80px;
-}
-
-.scam-subtitle {
-  color: white;
-  font-family: 'Courier New', monospace;
-  font-size: 30px;
-}
-
-.scam-text {
-  color: white;
-  font-family: 'Courier New', monospace;
-  font-size: 18px;
-}
-
 .s5 {
   height: 10px;
+}
+
+.custom-button {
+  width: 50%;
+}
+
+.custom-button-1 {
+  width: 100%;
 }
 
 .button4 {
@@ -366,11 +257,13 @@ header a:hover{
 }
 
 .footer {
-  max-width: 1200px;
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  margin-left: auto;
-  margin-right: 0px;
-  text-align: right;
+  color: black;
+  font-size: small;
+  text-align: center;
+  padding-bottom: 1vh;
 }
 
 .footer-item {
@@ -378,4 +271,13 @@ header a:hover{
   padding-bottom: 15px;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.popover {
+  max-width: 25vw;
+}
+
+.popover-header {
+  text-align: center;
+  font-size: 3vh;
 }

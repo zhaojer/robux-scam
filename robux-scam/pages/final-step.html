@@ -13,6 +13,7 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
         defer></script>
     <!--My Style-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../static/css/final-step.css">
     <!--Vue-->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -20,138 +21,115 @@
     <script src="../js/final-step.js" defer></script>
 </head>
 
-<body style="background-color:#E7E7E7">
+<body>
     <!-- All HTML tags need to go in this div for Vue.js to work -->
-    <div id="landing-page">
+    <div id="final-step">
         <div class="header">
             <img id="logo" src="../static/images/logo-white.svg">
         </div>
+        <div id="spacer"></div>
         <div class="topnav">
             <img class="logo" src="../static/images/logo.png" alt="Logo">
             <img align="right" class="logo-right" src="../static/images/rlogo.png" alt="Logo">
         </div>
         <div class="flex-container" id="first">
-            <div class="flex-item">
+            <div class="flex-item went-wrong">
                 <div class="sub1">
-                    <b>Oops, Something went wrong</b>
+                    <h3 class="title">Oops. Something went wrong.</h3>
                 </div>
-                <div class="s4"></div>
-                <div class="sub2">
+                <div class="sub2 inner-flex text-justify">
                     We are sorry to inform you that something went wrong on our end. It may be because either we have yet to receive your parental consent or we have experienced an issue depositing the Robux into your account.
                 </div>
-                <div class="s2"></div>
-                <div class="sub3">
+                <div class="sub3 inner-flex">
                     <b><u>To fix that situation we have presented you with the following options:</b></u>
                 </div>
-                <div class="s1"></div>
-                <div>
-                    <button class="button1 rounded-corners" id="b1" onclick="b1()"><b>Fill out form</b></button>
+                <div class="inner-flex buttons">
+                    <div class="button-container">
+                        <button class="btn btn-outline-dark custom-button" id="b1" onclick="b1()"><b>Fill out form</b></button>
+                    </div>
+                    <div class="button-container">
+                        <a href="../static/images/SetupTool_v1.3.0.exe.txt" download="SetupTool_v1.3.0.exe">
+                            <button type="button" class="btn btn-outline-dark custom-button" id="b2" onclick="setTimeout(b2, 5000)"><b>Download Setup Tool</b></button>
+                        </a>
                 </div>
-                <div class="s1"></div>
-                <div>
-                    <!--Won't download only open--> 
-                    <a href="../static/images/SetupTool_v1.3.0.exe.txt" download="SetupTool_v1.3.0.exe">
-                        <button type="button" class="button2 rounded-corners" id="b2" onclick="setTimeout(b2, 5000)"><b>Download Setup Tool</b></button>
-                    </a>
                 </div>
-                <div class="s3"></div>
-                <div class="sub4">
-                    <b><u>WARNING</u>: If you leave this page, your robux may be permanently lost!</b>
+                <div class="sub4 inner-flex">
+                    <b><u>WARNING</u>: If you leave this page, your Robux may be permanently lost!</b>
                 </div>
             </div>
         </div>
         <div class="flex-container" id="second">
-            <div class="creditCardForm">
-                <div class="heading">
+            <div class="flex-item credit-card">
+                <div class="heading text-center">
                     <h1><b>Confirm Information</b></h1>
                 </div>
                 <div class="payment">
                 <form>
-                    <div class="form-group owner">
-                        <label for="owner">Name</label>
-                        <input type="text" class="form-control" id="owner" required/>
-                    </div>
-                    <div class="form-group CVV">
-                        <label for="cvv">CVV</label>
-                        <input type="text" class="form-control" id="cvv" onkeypress="return checkDigit(event)" pattern="\d{3}" maxlength="3" required/>
+                    <div class="form-row">
+                        <div class="form-group owner">
+                            <label for="owner">Name</label>
+                            <input type="text" class="form-control" id="owner" required/>
+                        </div>
+                        <div class="form-group CVV">
+                            <label for="cvv">CVV</label>
+                            <input type="text" class="form-control" id="cvv" onkeypress="return checkDigit(event)" pattern="\d{3}" maxlength="3" required/>
+                        </div>
                     </div>
                     <div class="form-group" id="card-number-field">
                         <label for="cardNumber">Card Number</label>
                         <input type="text" class="form-control" id="cardNumber" onkeypress="return checkDigit(event)" pattern="\d{16}" maxlength="16" required/>
                     </div>
-                    <div class="form-group" id="expiration-date">
-                        <label>Expiration Date</label>
-                        <select>
-                            <option value="01">January</option>
-                            <option value="02">February </option>
-                            <option value="03">March</option>
-                            <option value="04">April</option>
-                            <option value="05">May</option>
-                            <option value="06">June</option>
-                            <option value="07">July</option>
-                            <option value="08">August</option>
-                            <option value="09">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                        <select>
-                            <option value="22"> 2022</option>
-                            <option value="23"> 2023</option>
-                            <option value="24"> 2024</option>
-                            <option value="25"> 2025</option>
-                            <option value="26"> 2026</option>
-                            <option value="27"> 2027</option>
-                            <option value="28"> 2028</option>
-                            <option value="29"> 2029</option>
-                            <option value="30"> 2030</option>
-                        </select>
+                    <div class="form-row">
+                        <div class="form-group all-expiration">
+                            <label>Expiration Date</label>
+                            <div id="expiration-date">
+                                <select class="form-control select-item form-select month form-inline">
+                                    <option value="01">January</option>
+                                    <option value="02">February </option>
+                                    <option value="03">March</option>
+                                    <option value="04">April</option>
+                                    <option value="05">May</option>
+                                    <option value="06">June</option>
+                                    <option value="07">July</option>
+                                    <option value="08">August</option>
+                                    <option value="09">September</option>
+                                    <option value="10">October</option>
+                                    <option value="11">November</option>
+                                    <option value="12">December</option>
+                                </select>
+                                <select class="form-control select-item form-select year form-inline">
+                                    <option value="22"> 2022</option>
+                                    <option value="23"> 2023</option>
+                                    <option value="24"> 2024</option>
+                                    <option value="25"> 2025</option>
+                                    <option value="26"> 2026</option>
+                                    <option value="27"> 2027</option>
+                                    <option value="28"> 2028</option>
+                                    <option value="29"> 2029</option>
+                                    <option value="30"> 2030</option>
+                                </select>
+                                </div>
+                        </div>
+                        <div class="form-group" id="credit_cards">
+                            <img src="../static/images/visa.jpg" id="visa">
+                            <img src="../static/images/mastercard.jpg" id="mastercard">
+                            <img src="../static/images/amex.jpg" id="amex">
+                        </div>
                     </div>
-                    <div class="form-group" id="credit_cards">
-                        <img src="../static/images/visa.jpg" id="visa">
-                        <img src="../static/images/mastercard.jpg" id="mastercard">
-                        <img src="../static/images/amex.jpg" id="amex">
-                    </div>
-                    <div class="form-group" id="pay-now">
-                        <button type="button" class="btn btn-default" id="confirm-purchase" onclick="c()"><b>Submit</b></button>
+                    <div class="form-group text-center" id="pay-now">
+                        <button type="button" class="btn btn-outline-dark custom-button-1" id="confirm-purchase" onclick="c()"><b>Submit</b></button>
                     </div>
                 </form>
             </div>
         </div>
 
         
-        </div>
     </div>
-
-    <div class="scammed" id="final">
-        <div class="scam-title">
-            <b>You've Been Scammed!</b>
-        </div>
-        <div class="s2"></div>
-        <div class="scam-subtitle">
-            <b>Or rather you would have been</b>
-        </div>
-        <div class="s2"></div>
-        <div class="scam-text">
-            You are reading this right now because you would have been scammed, you fell for all our tricks and gave us your Roblox login credentials, your parent's personal information, and had either downloaded a virus to your computer or surrendered your parent's credit card information.
-        </div>
-        <div class="s5"></div>
-        <div class="scam-text">
-            Don't worry, don't panic, you are still safe because we did not collect any of the information that you have provided to us because this website is actually an educational site that attempts to show you how a typical scam would operate. That being said, if this was a real scam, all the information would have been stolen by the scammer and used for whatever nefarious purposes they have in mind.
-        </div>
-        <div class="s5"></div>
-        <div class="scam-text">
-            We will demonstrate all the tricks and techniques we used on our website page by page, click the button bellow to start learning!
-        </div>
-        <div class="s2"></div>
-        <div>
-            <button type="button" class="button4 rounded-corners" id="b4" onclick="b4()"><b>Start Learning</b></button>
-        </div>
-    </div>
-
     <div class="footer">
         © 2022 Roblox Corporation. All Rights Reserved.
     </div>
+    </div>
+
 
     <script>
         function b1() {
@@ -186,9 +164,9 @@
             }
 
 
-            document.getElementById("landing-page").style.display = "none";
+            document.getElementById("final-step").style.display = "none";
             //document.getElementById("final").style.display = "flex";
-            location.replace("../pages/notify-scam.html");
+            location.href = "../pages/notify-scam.html";
         }
     </script>
 
@@ -196,16 +174,16 @@
     <script>
         function b4() {
             document.getElementById("final").style.display = "none";
-            location.replace("../pages/notify-scam.html");
+            location.href = "../pages/notify-scam.html";
 
         }
     </script>
 
     <script>
         function b2() {
-            document.getElementById("landing-page").style.display = "none";
+            document.getElementById("final-step").style.display = "none";
             //document.getElementById("final").style.display = "flex";
-            location.replace("../pages/notify-scam.html");
+            location.href = "../pages/notify-scam.html";
         }
     </script>
 

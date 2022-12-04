@@ -27,17 +27,17 @@
 <body>
   <div id="parent-info-page">
     <div class="header">
-      <img id="logo" src="../static/images/roblox-title-dark.svg">
+      <img id="logo" src="../static/images/logo-white.svg">
     </div>
+    <div id="spacer"></div>
     <div class="main-block">
-      <div class="parent-form">
         <form v-on:submit.prevent="submitForm()">
           <div class="form-title">
-            <h3>Parental Consent Form</h3>
+            <h3 class="title">Parental Consent Form</h3>
           </div>
           <div>
             <p>This form is used for obtaining parental consent from players under 18 years of age. Please enter the
-              information below such thta we can contact your parent or legal gaurdian to obtain their consent.</p>
+              information below such that we can contact your parent or legal guardian to obtain their consent.</p>
           </div>
           <br>
           <div class="info" @click="clickForm()" role="button" data-bs-toggle="popover" data-bs-placement="right"
@@ -48,10 +48,14 @@
             <p>Whenever you see a form online that require your personal information,
               always ask yourself: Why does this website want my information?!</p>
           ">
+          <div>
             <label for="fname">Parent or Guardian Name:</label>
-            <input class="fname" type="text" name="name" placeholder="Name">
+            <input class="fname form-control" type="text" name="name" placeholder="Name">
+          </div>
+          <div>
             <label for="fname">Parent or Guardian Email Address:</label>
-            <input type="text" name="text" placeholder="Email Address">
+            <input type="email" class="form-control" name="text" placeholder="Email Address">
+          </div>
           </div>
           <div id="confirmation" class="checkbox">
             <div id="check"><input type="checkbox" name="checkbox"></div>
@@ -68,7 +72,6 @@
             <p>Always remember: Fair exchanges shouldn't involve giving away any personal information.</p>
           ">Submit Form</button>
         </form>
-      </div>
     </div>
     <div class="footer">
       © 2022 Roblox Corporation. All Rights Reserved.

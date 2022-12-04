@@ -8,16 +8,22 @@ body {
 	/* border: 5px black solid; */
 	height: 100%;
 	background: #EBECF0;
+	display: flex;
+	flex-direction: column;
 }
 
 .header {
-	overflow: hidden;
-    background-color: #DEE1E3;
+    background-color: black;
     height: 9%;
-    /* width: 100%; */
-    position: sticky;
+    width: 100%;
+    position: fixed;
     display: flex;
     padding-left: 5vw;
+}
+
+#spacer {
+	width: 100%;
+	height: 9%;
 }
 
 #logo {
@@ -28,9 +34,9 @@ body {
 .main-block {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	height: 91%;
+	width: 100%;
+	height: 100%;
 }
 
 .form-title{
@@ -41,10 +47,16 @@ body {
 form {
 	/* display: inline-block; */
 	width: 40%;
-	padding: 25px;
+	padding: 45px;
 	border-radius: 3px;
 	margin: auto;
 	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 45px;
+	max-height: 650px;
+	flex: 1;
 }
 
 p {
@@ -53,8 +65,10 @@ p {
 }
 
 .info {
+	flex: .6;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 }
 
 input {
@@ -78,6 +92,10 @@ input::placeholder {
 
 .parent-form .btn {
 	width: 100%;
+}
+
+.title {
+	font-weight: 900;
 }
 
 .footer {

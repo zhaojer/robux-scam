@@ -74,4 +74,4 @@ createApp({
 
     $('#tooltip').data('bs.tooltip').options.placement = 'right';
   }
-}).mount('#landing-page')
+}).mount('#final-step')

@@ -1,6 +1,11 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  background-color:#EBECF0;
+  font-family: Roboto, sans-serif;
+}
+
 body {
-    margin:20px;
-    /* background:hsl(70, 31%, 85%); */
     background-image: url("../../static/images/congrats_background.png");
     text-align: center;
     background-size: cover;
@@ -8,7 +13,7 @@ body {
 
 .balloon {
   display:inline-block;
-   width:120px;
+  width:120px;
   height:145px;
   background:hsl(215,50%,65%);
   border-radius:80%;
@@ -62,7 +67,7 @@ body {
 .balloon:nth-child(5):before { color:hsl(23,44%,46%);  }
 
 #congrats_message {
-	width: 50%;
+	width: 40%;
 	padding: 25px;
 	margin: auto;
     background:hsl(70, 31%, 85%);
