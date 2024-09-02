@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Roblox</title>
+    <meta charset="utf-8">
+    <!--For Mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+        defer></script>
+    <!--My Style-->
+    <link rel="stylesheet" type="text/css" href="../static/css/landing.css">
+    <!--Vue-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--My Vue-->
+    <script src="../js/landing.js" defer></script>
+</head>
+
+<body>
+    <!-- All HTML tags need to go in this div for Vue.js to work -->
+    <div id="landing-page">
+        <div class="header">
+            <img id="logo" src="../static/images/logo-white.svg">
+        </div>
+        <div id="spacer"></div>
+        <div id="chance-to-win">
+            <div id="top-section-container" class="section-container">
+                <div class="section-title text-center">
+                    <h2>Get A Chance to Win Robux For Free!</h2>
+                </div>
+                <div class="top-section-image">
+                    <img class="image" src="../static/images/get-robux.svg">
+                </div>
+                <div class="top-section-bottom">
+                    <div class="top-lower-box">
+                        <img src="../static/images/avatars-left.svg">
+                    </div>
+                    <div id="center-info" class="top-lower-box">
+                        <div class="top-lower-box text-center">
+                            Robux allows you to purchase upgrades for your avatar or buy special abilities in experiences.
+                        </div>
+                        <div class="top-lower-box next-section">
+                            <div>Why are we doing this?</div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="top-lower-box">
+                        <img src="../static/images/avatars-right.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="anniversary">
+            <div class="section-container">
+                <div class="section-title text-center">
+                    <h2>We are almost 17 years old!</h2>
+                </div>
+                <p class="text-justify">
+                    The 17th year anniversary of Roblox is coming up.
+                    We would like to thank all of our players around the globe for your contribution to the game!
+                    Without you, we could never achieve who we are today.
+                </p>
+                <p class="text-justify">
+                    To express our appreciation, we are giving out 1,000,000 Robux to our players.
+                    All players will have a chance to win their share of the Robux by entering the lottery below.
+                    By participating in the lottery, you will get two guaranteed free virtual items!
+                </p>
+                <div id="virtual-items">
+                    <img width=362 src="../static/images/virtual_item_1.png">
+                    <img width=362 src="../static/images/virtual_item_2.png">
+                </div>
+                <div class="top-lower-box next-section">
+                    <div>Test your luck!</div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div id="lottery">
+            <div class="section-container">
+                <div id="bottom-title-override" class="section-title text-center">
+                    <h2>Free Robux. Let's get it!</h2>
+                </div>
+                <button type="button" class="btn btn-outline-light btn-lg btn-custom" @click="openAgeRestrictionModal()">Test my luck!</button>
+            </div>
+        </div>
+
+        <div id="age-restriction" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+              <div class="modal-content">
+                <div class="title-modal">
+                  <p class="text-center">Age Restriction</p>
+                </div>
+                <div class="modal-body text-justify">
+                  <p>
+                    Our data shows that you are under 18 years old.
+                    According to the US Federal Law, a minor (under age 18) cannot participate in any sort of lottery or gambling.
+                    Thus, we must receive parental consent in order to allow you to participate in the lottery. 
+                  </p>
+                </div>
+                <div class="text-center" style="display: flex; justify-content: space-around;">
+                  <a href="parent-info.html"><button type="button" class="btn btn-outline-dark restrict-button" @click="claim()">I would like to proceed.</button></a>
+                  <button type="button" class="btn btn-outline-dark restrict-button" data-bs-dismiss="modal">I will renounce my chance.</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-item text-center">
+                    *Offer available only to players aged 18 or older and players
+                    under 18 but with parental consent, until December 31, 2022 or
+                    while supplies last.<br>
+
+                    Must have a Roblox account to access and use
+                    Robux and the free virtual items.
+                </div>
+                <div class="footer-item">
+                    © 2022 Roblox Corporation. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

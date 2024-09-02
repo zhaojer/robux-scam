@@ -1,0 +1,114 @@
+<!-- Adapted from: https://www.w3docs.com/learn-html/html-form-templates.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Redemption Page</title>
+  <meta charset="utf-8">
+  <!--For Mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Vue-->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <!--My Vue-->
+  <script src="../js/parent-info.js" defer></script>
+  <!--Bootstrap-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"
+    defer></script>
+  <!--My Style-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/css/parent-info.css">
+</head>
+
+<body>
+  <div id="parent-info-page">
+    <div class="header">
+      <img id="logo" src="../static/images/logo-white.svg">
+    </div>
+    <div id="spacer"></div>
+      <div class="main-block">
+        <form v-on:submit.prevent="submitForm()">
+          <div class="form-title">
+            <h3 class="title">Parental Consent Form</h3>
+          </div>
+          <div>
+            <p>This form is used for obtaining parental consent from players under 18 years of age. Please enter the
+              information below such that we can contact your parent or legal guardian to obtain their consent.</p>
+          </div>
+          <br>
+            <div>
+              <label for="fname">Parent or Guardian Name:</label>
+              <input class="fname form-control" type="text" name="name" placeholder="Name" v-model="form.name" required>
+            </div>
+            <div>
+            <label for="fname">Parent or Guardian Email Address:</label>
+            <input type="email" class="form-control" name="text" placeholder="Email Address" v-model="form.emailAddress" required>
+            </div>
+          <div id="confirmation" class="checkbox">
+            <div id="check"><input type="checkbox" name="checkbox" required></div>
+            <div>By checking this box, I hereby confirm that all of the above information is correct and I understand
+              that any false reporting may result in legal actions against me.
+            </div>
+          </div>
+          <button class="btn btn-outline-dark" type="submit">Submit Form</button>
+        </form>
+      </div>
+    <div class="footer">
+      © 2022 Roblox Corporation. All Rights Reserved.
+    </div>
+    <!-- <div id="loading" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div id="modal-content" class="modal-dialog modal-dialog-centered modal-sm">
+        <div style="border: 10px solid black"><img src="../static/images/loading-gif.gif" width="150" height="150"></div>
+        <div id="processing">Processing...</div>
+      </div>
+    </div> -->
+    <div class="modal fade" id="loading" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm justify-loading">
+        <img src="../static/images/loading-gif.gif" width="150" height="150">
+        <div id="processing">Processing...</div>
+      </div>
+    </div>
+    <div class="modal fade" id="success" data-bs-backdrop="static" aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">We Have Received Your Form</h5>
+          </div>
+          <div class="modal-body">
+            We will contact your parent or guardian as soon as possible.
+            Meanwhile, you may participate in the lottery but to claim the prize,
+            we must receive a consent response from parent or guardian.
+          </div>
+          <div class="modal-footer">
+            <a role="button" class="btn btn-outline-success" href="lottery.html">I Understand. Proceed to Robux
+              Lottery!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="failure" data-bs-backdrop="static" aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h5 class="modal-title">Something Went Wrong</h5>
+          </div>
+          <div class="modal-body">
+            The form failed to go through. Please try submitting again.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
